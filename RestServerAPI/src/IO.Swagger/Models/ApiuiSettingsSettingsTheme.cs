@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsTheme : IEquatable<ApiuiSettingsSettingsTheme>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Color
         /// </summary>
         [Required]
 
-        [DataMember(Name="color")]
+        [DataMember(Name = "color")]
         public string Color { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     Color == other.Color ||
                     Color != null &&
                     Color.Equals(other.Color)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Color != null)
+                if (Color != null)
                     hashCode = hashCode * 59 + Color.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsTheme left, ApiuiSettingsSettingsTheme right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2005SelectedCorrespondents : IEquatable<InlineResponse2005SelectedCorrespondents>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_count")]
+        [DataMember(Name = "document_count")]
         public int? DocumentCount { get; set; }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     DocumentCount == other.DocumentCount ||
                     DocumentCount != null &&
@@ -110,16 +110,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (DocumentCount != null)
+                if (DocumentCount != null)
                     hashCode = hashCode * 59 + DocumentCount.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2005SelectedCorrespondents left, InlineResponse2005SelectedCorrespondents right)
         {
@@ -131,7 +131,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

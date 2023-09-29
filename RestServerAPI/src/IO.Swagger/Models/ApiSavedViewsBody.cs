@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiSavedViewsBody : IEquatable<ApiSavedViewsBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [Required]
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="show_on_dashboard")]
+        [DataMember(Name = "show_on_dashboard")]
         public bool? ShowOnDashboard { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="show_in_sidebar")]
+        [DataMember(Name = "show_in_sidebar")]
         public bool? ShowInSidebar { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="filter_rules")]
+        [DataMember(Name = "filter_rules")]
         public List<ApisavedViewsFilterRules> FilterRules { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="sort_reverse")]
+        [DataMember(Name = "sort_reverse")]
         public bool? SortReverse { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="sort_field")]
+        [DataMember(Name = "sort_field")]
         public string SortField { get; set; }
 
         /// <summary>
@@ -123,32 +123,32 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     ShowOnDashboard == other.ShowOnDashboard ||
                     ShowOnDashboard != null &&
                     ShowOnDashboard.Equals(other.ShowOnDashboard)
-                ) && 
+                ) &&
                 (
                     ShowInSidebar == other.ShowInSidebar ||
                     ShowInSidebar != null &&
                     ShowInSidebar.Equals(other.ShowInSidebar)
-                ) && 
+                ) &&
                 (
                     FilterRules == other.FilterRules ||
                     FilterRules != null &&
                     FilterRules.SequenceEqual(other.FilterRules)
-                ) && 
+                ) &&
                 (
                     SortReverse == other.SortReverse ||
                     SortReverse != null &&
                     SortReverse.Equals(other.SortReverse)
-                ) && 
+                ) &&
                 (
                     SortField == other.SortField ||
                     SortField != null &&
@@ -166,24 +166,24 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (ShowOnDashboard != null)
+                if (ShowOnDashboard != null)
                     hashCode = hashCode * 59 + ShowOnDashboard.GetHashCode();
-                    if (ShowInSidebar != null)
+                if (ShowInSidebar != null)
                     hashCode = hashCode * 59 + ShowInSidebar.GetHashCode();
-                    if (FilterRules != null)
+                if (FilterRules != null)
                     hashCode = hashCode * 59 + FilterRules.GetHashCode();
-                    if (SortReverse != null)
+                if (SortReverse != null)
                     hashCode = hashCode * 59 + SortReverse.GetHashCode();
-                    if (SortField != null)
+                if (SortField != null)
                     hashCode = hashCode * 59 + SortField.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiSavedViewsBody left, ApiSavedViewsBody right)
         {
@@ -195,7 +195,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace IO.Swagger.Filters
+namespace PaperlessRestApi.Filters
 {
     /// <summary>
     /// Path Parameter Validation Rules Filter
@@ -42,7 +42,7 @@ namespace IO.Swagger.Filters
                         string regex = (string)regexAttr.ConstructorArguments[0].Value;
                         if (swaggerParam is OpenApiParameter)
                         {
-                            ((OpenApiParameter)swaggerParam).Schema.Pattern = regex;
+                            swaggerParam.Schema.Pattern = regex;
                         }
                     }
 
@@ -72,8 +72,8 @@ namespace IO.Swagger.Filters
 
                     if (swaggerParam is OpenApiParameter)
                     {
-                        ((OpenApiParameter)swaggerParam).Schema.MinLength = minLenght;
-                        ((OpenApiParameter)swaggerParam).Schema.MaxLength = maxLength;
+                        swaggerParam.Schema.MinLength = minLenght;
+                        swaggerParam.Schema.MaxLength = maxLength;
                     }
 
                     // Range [Range]
@@ -85,8 +85,8 @@ namespace IO.Swagger.Filters
 
                         if (swaggerParam is OpenApiParameter)
                         {
-                            ((OpenApiParameter)swaggerParam).Schema.Minimum = rangeMin;
-                            ((OpenApiParameter)swaggerParam).Schema.Maximum = rangeMax;
+                            swaggerParam.Schema.Minimum = rangeMin;
+                            swaggerParam.Schema.Maximum = rangeMax;
                         }
                     }
                 }

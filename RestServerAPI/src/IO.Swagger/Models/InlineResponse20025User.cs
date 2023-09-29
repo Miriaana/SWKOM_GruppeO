@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20025User : IEquatable<InlineResponse20025User>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_superuser")]
+        [DataMember(Name = "is_superuser")]
         public bool? IsSuperuser { get; set; }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="groups")]
-        public List<Object> Groups { get; set; }
+        [DataMember(Name = "groups")]
+        public List<object> Groups { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -105,22 +105,22 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Username == other.Username ||
                     Username != null &&
                     Username.Equals(other.Username)
-                ) && 
+                ) &&
                 (
                     IsSuperuser == other.IsSuperuser ||
                     IsSuperuser != null &&
                     IsSuperuser.Equals(other.IsSuperuser)
-                ) && 
+                ) &&
                 (
                     Groups == other.Groups ||
                     Groups != null &&
@@ -138,20 +138,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
-                    if (IsSuperuser != null)
+                if (IsSuperuser != null)
                     hashCode = hashCode * 59 + IsSuperuser.GetHashCode();
-                    if (Groups != null)
+                if (Groups != null)
                     hashCode = hashCode * 59 + Groups.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20025User left, InlineResponse20025User right)
         {
@@ -163,7 +163,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

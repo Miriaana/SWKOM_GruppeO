@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20019 : IEquatable<InlineResponse20019>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="task_id")]
+        [DataMember(Name = "task_id")]
         public string TaskId { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="task_file_name")]
+        [DataMember(Name = "task_file_name")]
         public string TaskFileName { get; set; }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="date_created")]
+        [DataMember(Name = "date_created")]
         public string DateCreated { get; set; }
 
         /// <summary>
         /// Gets or Sets DateDone
         /// </summary>
 
-        [DataMember(Name="date_done")]
+        [DataMember(Name = "date_done")]
         public string DateDone { get; set; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="status")]
+        [DataMember(Name = "status")]
         public string Status { get; set; }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="result")]
+        [DataMember(Name = "result")]
         public string Result { get; set; }
 
         /// <summary>
@@ -94,14 +94,14 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="acknowledged")]
+        [DataMember(Name = "acknowledged")]
         public bool? Acknowledged { get; set; }
 
         /// <summary>
         /// Gets or Sets RelatedDocument
         /// </summary>
 
-        [DataMember(Name="related_document")]
+        [DataMember(Name = "related_document")]
         public string RelatedDocument { get; set; }
 
         /// <summary>
@@ -157,52 +157,52 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     TaskId == other.TaskId ||
                     TaskId != null &&
                     TaskId.Equals(other.TaskId)
-                ) && 
+                ) &&
                 (
                     TaskFileName == other.TaskFileName ||
                     TaskFileName != null &&
                     TaskFileName.Equals(other.TaskFileName)
-                ) && 
+                ) &&
                 (
                     DateCreated == other.DateCreated ||
                     DateCreated != null &&
                     DateCreated.Equals(other.DateCreated)
-                ) && 
+                ) &&
                 (
                     DateDone == other.DateDone ||
                     DateDone != null &&
                     DateDone.Equals(other.DateDone)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
                     Type.Equals(other.Type)
-                ) && 
+                ) &&
                 (
                     Status == other.Status ||
                     Status != null &&
                     Status.Equals(other.Status)
-                ) && 
+                ) &&
                 (
                     Result == other.Result ||
                     Result != null &&
                     Result.Equals(other.Result)
-                ) && 
+                ) &&
                 (
                     Acknowledged == other.Acknowledged ||
                     Acknowledged != null &&
                     Acknowledged.Equals(other.Acknowledged)
-                ) && 
+                ) &&
                 (
                     RelatedDocument == other.RelatedDocument ||
                     RelatedDocument != null &&
@@ -220,32 +220,32 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (TaskId != null)
+                if (TaskId != null)
                     hashCode = hashCode * 59 + TaskId.GetHashCode();
-                    if (TaskFileName != null)
+                if (TaskFileName != null)
                     hashCode = hashCode * 59 + TaskFileName.GetHashCode();
-                    if (DateCreated != null)
+                if (DateCreated != null)
                     hashCode = hashCode * 59 + DateCreated.GetHashCode();
-                    if (DateDone != null)
+                if (DateDone != null)
                     hashCode = hashCode * 59 + DateDone.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
-                    if (Status != null)
+                if (Status != null)
                     hashCode = hashCode * 59 + Status.GetHashCode();
-                    if (Result != null)
+                if (Result != null)
                     hashCode = hashCode * 59 + Result.GetHashCode();
-                    if (Acknowledged != null)
+                if (Acknowledged != null)
                     hashCode = hashCode * 59 + Acknowledged.GetHashCode();
-                    if (RelatedDocument != null)
+                if (RelatedDocument != null)
                     hashCode = hashCode * 59 + RelatedDocument.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20019 left, InlineResponse20019 right)
         {
@@ -257,7 +257,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

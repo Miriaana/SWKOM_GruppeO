@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiTagsBody : IEquatable<ApiTagsBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [Required]
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="color")]
+        [DataMember(Name = "color")]
         public string Color { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_inbox_tag")]
+        [DataMember(Name = "is_inbox_tag")]
         public bool? IsInboxTag { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="matching_algorithm")]
+        [DataMember(Name = "matching_algorithm")]
         public int? MatchingAlgorithm { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="match")]
+        [DataMember(Name = "match")]
         public string Match { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_insensitive")]
+        [DataMember(Name = "is_insensitive")]
         public bool? IsInsensitive { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="owner")]
+        [DataMember(Name = "owner")]
         public int? Owner { get; set; }
 
         /// <summary>
@@ -132,37 +132,37 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Color == other.Color ||
                     Color != null &&
                     Color.Equals(other.Color)
-                ) && 
+                ) &&
                 (
                     IsInboxTag == other.IsInboxTag ||
                     IsInboxTag != null &&
                     IsInboxTag.Equals(other.IsInboxTag)
-                ) && 
+                ) &&
                 (
                     MatchingAlgorithm == other.MatchingAlgorithm ||
                     MatchingAlgorithm != null &&
                     MatchingAlgorithm.Equals(other.MatchingAlgorithm)
-                ) && 
+                ) &&
                 (
                     Match == other.Match ||
                     Match != null &&
                     Match.Equals(other.Match)
-                ) && 
+                ) &&
                 (
                     IsInsensitive == other.IsInsensitive ||
                     IsInsensitive != null &&
                     IsInsensitive.Equals(other.IsInsensitive)
-                ) && 
+                ) &&
                 (
                     Owner == other.Owner ||
                     Owner != null &&
@@ -180,26 +180,26 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Color != null)
+                if (Color != null)
                     hashCode = hashCode * 59 + Color.GetHashCode();
-                    if (IsInboxTag != null)
+                if (IsInboxTag != null)
                     hashCode = hashCode * 59 + IsInboxTag.GetHashCode();
-                    if (MatchingAlgorithm != null)
+                if (MatchingAlgorithm != null)
                     hashCode = hashCode * 59 + MatchingAlgorithm.GetHashCode();
-                    if (Match != null)
+                if (Match != null)
                     hashCode = hashCode * 59 + Match.GetHashCode();
-                    if (IsInsensitive != null)
+                if (IsInsensitive != null)
                     hashCode = hashCode * 59 + IsInsensitive.GetHashCode();
-                    if (Owner != null)
+                if (Owner != null)
                     hashCode = hashCode * 59 + Owner.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiTagsBody left, ApiTagsBody right)
         {
@@ -211,7 +211,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,26 +18,26 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class UserInfo : IEquatable<UserInfo>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
 
-        [DataMember(Name="password")]
+        [DataMember(Name = "password")]
         public string Password { get; set; }
 
         /// <summary>
@@ -85,12 +85,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Username == other.Username ||
                     Username != null &&
                     Username.Equals(other.Username)
-                ) && 
+                ) &&
                 (
                     Password == other.Password ||
                     Password != null &&
@@ -108,16 +108,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
-                    if (Password != null)
+                if (Password != null)
                     hashCode = hashCode * 59 + Password.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(UserInfo left, UserInfo right)
         {
@@ -129,7 +129,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

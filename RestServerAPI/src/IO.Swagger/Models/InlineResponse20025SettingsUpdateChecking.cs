@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20025SettingsUpdateChecking : IEquatable<InlineResponse20025SettingsUpdateChecking>
-    { 
+    {
         /// <summary>
         /// Gets or Sets BackendSetting
         /// </summary>
         [Required]
 
-        [DataMember(Name="backend_setting")]
+        [DataMember(Name = "backend_setting")]
         public string BackendSetting { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     BackendSetting == other.BackendSetting ||
                     BackendSetting != null &&
                     BackendSetting.Equals(other.BackendSetting)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (BackendSetting != null)
+                if (BackendSetting != null)
                     hashCode = hashCode * 59 + BackendSetting.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20025SettingsUpdateChecking left, InlineResponse20025SettingsUpdateChecking right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

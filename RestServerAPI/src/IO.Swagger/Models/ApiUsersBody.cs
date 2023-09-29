@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiUsersBody : IEquatable<ApiUsersBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
         [Required]
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="email")]
+        [DataMember(Name = "email")]
         public string Email { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="password")]
+        [DataMember(Name = "password")]
         public string Password { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="first_name")]
+        [DataMember(Name = "first_name")]
         public string FirstName { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="last_name")]
+        [DataMember(Name = "last_name")]
         public string LastName { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_active")]
+        [DataMember(Name = "is_active")]
         public bool? IsActive { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_superuser")]
+        [DataMember(Name = "is_superuser")]
         public bool? IsSuperuser { get; set; }
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="groups")]
-        public List<Object> Groups { get; set; }
+        [DataMember(Name = "groups")]
+        public List<object> Groups { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -141,42 +141,42 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Username == other.Username ||
                     Username != null &&
                     Username.Equals(other.Username)
-                ) && 
+                ) &&
                 (
                     Email == other.Email ||
                     Email != null &&
                     Email.Equals(other.Email)
-                ) && 
+                ) &&
                 (
                     Password == other.Password ||
                     Password != null &&
                     Password.Equals(other.Password)
-                ) && 
+                ) &&
                 (
                     FirstName == other.FirstName ||
                     FirstName != null &&
                     FirstName.Equals(other.FirstName)
-                ) && 
+                ) &&
                 (
                     LastName == other.LastName ||
                     LastName != null &&
                     LastName.Equals(other.LastName)
-                ) && 
+                ) &&
                 (
                     IsActive == other.IsActive ||
                     IsActive != null &&
                     IsActive.Equals(other.IsActive)
-                ) && 
+                ) &&
                 (
                     IsSuperuser == other.IsSuperuser ||
                     IsSuperuser != null &&
                     IsSuperuser.Equals(other.IsSuperuser)
-                ) && 
+                ) &&
                 (
                     Groups == other.Groups ||
                     Groups != null &&
@@ -194,28 +194,28 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
-                    if (Email != null)
+                if (Email != null)
                     hashCode = hashCode * 59 + Email.GetHashCode();
-                    if (Password != null)
+                if (Password != null)
                     hashCode = hashCode * 59 + Password.GetHashCode();
-                    if (FirstName != null)
+                if (FirstName != null)
                     hashCode = hashCode * 59 + FirstName.GetHashCode();
-                    if (LastName != null)
+                if (LastName != null)
                     hashCode = hashCode * 59 + LastName.GetHashCode();
-                    if (IsActive != null)
+                if (IsActive != null)
                     hashCode = hashCode * 59 + IsActive.GetHashCode();
-                    if (IsSuperuser != null)
+                if (IsSuperuser != null)
                     hashCode = hashCode * 59 + IsSuperuser.GetHashCode();
-                    if (Groups != null)
+                if (Groups != null)
                     hashCode = hashCode * 59 + Groups.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiUsersBody left, ApiUsersBody right)
         {
@@ -227,7 +227,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

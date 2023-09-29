@@ -14,19 +14,19 @@ using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using IO.Swagger.Attributes;
+using PaperlessRestApi.Attributes;
 
 using Microsoft.AspNetCore.Authorization;
-using IO.Swagger.Models;
+using PaperlessRestApi.Models;
 
-namespace IO.Swagger.Controllers
-{ 
+namespace PaperlessRestApi.Controllers
+{
     /// <summary>
     /// 
     /// </summary>
     [ApiController]
     public class DocumentTypesApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// 
         /// </summary>
@@ -37,16 +37,16 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("CreateDocumentType")]
         [SwaggerResponse(statusCode: 200, type: typeof(InlineResponse2009), description: "Success")]
-        public virtual IActionResult CreateDocumentType([FromBody]ApiDocumentTypesBody body)
-        { 
+        public virtual IActionResult CreateDocumentType([FromBody] ApiDocumentTypesBody body)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(InlineResponse2009));
             string exampleJson = null;
             exampleJson = "{\n  \"owner\" : 1,\n  \"matching_algorithm\" : 6,\n  \"user_can_change\" : true,\n  \"is_insensitive\" : true,\n  \"name\" : \"name\",\n  \"match\" : \"match\",\n  \"id\" : 0,\n  \"slug\" : \"slug\"\n}";
-            
-                        var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponse2009>(exampleJson)
-                        : default(InlineResponse2009);            //TODO: Change the data returned
+
+            var example = exampleJson != null
+            ? JsonConvert.DeserializeObject<InlineResponse2009>(exampleJson)
+            : default;            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -59,8 +59,8 @@ namespace IO.Swagger.Controllers
         [Route("/api/document_types/{id}")]
         [ValidateModelState]
         [SwaggerOperation("DeleteDocumentType")]
-        public virtual IActionResult DeleteDocumentType([FromRoute][Required]int? id)
-        { 
+        public virtual IActionResult DeleteDocumentType([FromRoute][Required] int? id)
+        {
             //TODO: Uncomment the next line to return response 204 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(204);
 
@@ -78,16 +78,16 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetDocumentTypes")]
         [SwaggerResponse(statusCode: 200, type: typeof(InlineResponse2008), description: "Success")]
-        public virtual IActionResult GetDocumentTypes([FromQuery]int? page, [FromQuery]bool? fullPerms)
-        { 
+        public virtual IActionResult GetDocumentTypes([FromQuery] int? page, [FromQuery] bool? fullPerms)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(InlineResponse2008));
             string exampleJson = null;
             exampleJson = "{\n  \"next\" : 6,\n  \"all\" : [ 5, 5 ],\n  \"previous\" : 1,\n  \"count\" : 0,\n  \"results\" : [ {\n    \"owner\" : 9,\n    \"matching_algorithm\" : 2,\n    \"document_count\" : 7,\n    \"is_insensitive\" : true,\n    \"permissions\" : {\n      \"view\" : {\n        \"groups\" : [ \"\", \"\" ],\n        \"users\" : [ \"\", \"\" ]\n      }\n    },\n    \"name\" : \"name\",\n    \"match\" : \"match\",\n    \"id\" : 5,\n    \"slug\" : \"slug\"\n  }, {\n    \"owner\" : 9,\n    \"matching_algorithm\" : 2,\n    \"document_count\" : 7,\n    \"is_insensitive\" : true,\n    \"permissions\" : {\n      \"view\" : {\n        \"groups\" : [ \"\", \"\" ],\n        \"users\" : [ \"\", \"\" ]\n      }\n    },\n    \"name\" : \"name\",\n    \"match\" : \"match\",\n    \"id\" : 5,\n    \"slug\" : \"slug\"\n  } ]\n}";
-            
-                        var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponse2008>(exampleJson)
-                        : default(InlineResponse2008);            //TODO: Change the data returned
+
+            var example = exampleJson != null
+            ? JsonConvert.DeserializeObject<InlineResponse2008>(exampleJson)
+            : default;            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -102,16 +102,16 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("UpdateDocumentType")]
         [SwaggerResponse(statusCode: 200, type: typeof(InlineResponse20010), description: "Success")]
-        public virtual IActionResult UpdateDocumentType([FromRoute][Required]int? id, [FromBody]DocumentTypesIdBody body)
-        { 
+        public virtual IActionResult UpdateDocumentType([FromRoute][Required] int? id, [FromBody] DocumentTypesIdBody body)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(InlineResponse20010));
             string exampleJson = null;
             exampleJson = "{\n  \"owner\" : 5,\n  \"matching_algorithm\" : 6,\n  \"user_can_change\" : true,\n  \"document_count\" : 1,\n  \"is_insensitive\" : true,\n  \"name\" : \"name\",\n  \"match\" : \"match\",\n  \"id\" : 0,\n  \"slug\" : \"slug\"\n}";
-            
-                        var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponse20010>(exampleJson)
-                        : default(InlineResponse20010);            //TODO: Change the data returned
+
+            var example = exampleJson != null
+            ? JsonConvert.DeserializeObject<InlineResponse20010>(exampleJson)
+            : default;            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }

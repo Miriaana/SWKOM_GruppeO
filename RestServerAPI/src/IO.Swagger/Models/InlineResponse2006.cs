@@ -18,53 +18,53 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2006 : IEquatable<InlineResponse2006>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Correspondents
         /// </summary>
         [Required]
 
-        [DataMember(Name="correspondents")]
-        public List<Object> Correspondents { get; set; }
+        [DataMember(Name = "correspondents")]
+        public List<object> Correspondents { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
         [Required]
 
-        [DataMember(Name="tags")]
-        public List<Object> Tags { get; set; }
+        [DataMember(Name = "tags")]
+        public List<object> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentTypes
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_types")]
-        public List<Object> DocumentTypes { get; set; }
+        [DataMember(Name = "document_types")]
+        public List<object> DocumentTypes { get; set; }
 
         /// <summary>
         /// Gets or Sets StoragePaths
         /// </summary>
         [Required]
 
-        [DataMember(Name="storage_paths")]
-        public List<Object> StoragePaths { get; set; }
+        [DataMember(Name = "storage_paths")]
+        public List<object> StoragePaths { get; set; }
 
         /// <summary>
         /// Gets or Sets Dates
         /// </summary>
         [Required]
 
-        [DataMember(Name="dates")]
-        public List<Object> Dates { get; set; }
+        [DataMember(Name = "dates")]
+        public List<object> Dates { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,27 +114,27 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Correspondents == other.Correspondents ||
                     Correspondents != null &&
                     Correspondents.SequenceEqual(other.Correspondents)
-                ) && 
+                ) &&
                 (
                     Tags == other.Tags ||
                     Tags != null &&
                     Tags.SequenceEqual(other.Tags)
-                ) && 
+                ) &&
                 (
                     DocumentTypes == other.DocumentTypes ||
                     DocumentTypes != null &&
                     DocumentTypes.SequenceEqual(other.DocumentTypes)
-                ) && 
+                ) &&
                 (
                     StoragePaths == other.StoragePaths ||
                     StoragePaths != null &&
                     StoragePaths.SequenceEqual(other.StoragePaths)
-                ) && 
+                ) &&
                 (
                     Dates == other.Dates ||
                     Dates != null &&
@@ -152,22 +152,22 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Correspondents != null)
+                if (Correspondents != null)
                     hashCode = hashCode * 59 + Correspondents.GetHashCode();
-                    if (Tags != null)
+                if (Tags != null)
                     hashCode = hashCode * 59 + Tags.GetHashCode();
-                    if (DocumentTypes != null)
+                if (DocumentTypes != null)
                     hashCode = hashCode * 59 + DocumentTypes.GetHashCode();
-                    if (StoragePaths != null)
+                if (StoragePaths != null)
                     hashCode = hashCode * 59 + StoragePaths.GetHashCode();
-                    if (Dates != null)
+                if (Dates != null)
                     hashCode = hashCode * 59 + Dates.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2006 left, InlineResponse2006 right)
         {
@@ -179,7 +179,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

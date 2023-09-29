@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class DocumentsBulkEditBody : IEquatable<DocumentsBulkEditBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Documents
         /// </summary>
         [Required]
 
-        [DataMember(Name="documents")]
+        [DataMember(Name = "documents")]
         public List<int?> Documents { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="method")]
+        [DataMember(Name = "method")]
         public string Method { get; set; }
 
         /// <summary>
@@ -47,8 +47,8 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="parameters")]
-        public Object Parameters { get; set; }
+        [DataMember(Name = "parameters")]
+        public object Parameters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,17 +96,17 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Documents == other.Documents ||
                     Documents != null &&
                     Documents.SequenceEqual(other.Documents)
-                ) && 
+                ) &&
                 (
                     Method == other.Method ||
                     Method != null &&
                     Method.Equals(other.Method)
-                ) && 
+                ) &&
                 (
                     Parameters == other.Parameters ||
                     Parameters != null &&
@@ -124,18 +124,18 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Documents != null)
+                if (Documents != null)
                     hashCode = hashCode * 59 + Documents.GetHashCode();
-                    if (Method != null)
+                if (Method != null)
                     hashCode = hashCode * 59 + Method.GetHashCode();
-                    if (Parameters != null)
+                if (Parameters != null)
                     hashCode = hashCode * 59 + Parameters.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(DocumentsBulkEditBody left, DocumentsBulkEditBody right)
         {
@@ -147,7 +147,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class DocumentsSelectionDataBody : IEquatable<DocumentsSelectionDataBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Documents
         /// </summary>
         [Required]
 
-        [DataMember(Name="documents")]
+        [DataMember(Name = "documents")]
         public List<int?> Documents { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     Documents == other.Documents ||
                     Documents != null &&
                     Documents.SequenceEqual(other.Documents)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Documents != null)
+                if (Documents != null)
                     hashCode = hashCode * 59 + Documents.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(DocumentsSelectionDataBody left, DocumentsSelectionDataBody right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2005 : IEquatable<InlineResponse2005>
-    { 
+    {
         /// <summary>
         /// Gets or Sets SelectedCorrespondents
         /// </summary>
         [Required]
 
-        [DataMember(Name="selected_correspondents")]
+        [DataMember(Name = "selected_correspondents")]
         public List<InlineResponse2005SelectedCorrespondents> SelectedCorrespondents { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="selected_tags")]
+        [DataMember(Name = "selected_tags")]
         public List<InlineResponse2005SelectedCorrespondents> SelectedTags { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="selected_document_types")]
+        [DataMember(Name = "selected_document_types")]
         public List<InlineResponse2005SelectedCorrespondents> SelectedDocumentTypes { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="selected_storage_paths")]
+        [DataMember(Name = "selected_storage_paths")]
         public List<InlineResponse2005SelectedCorrespondents> SelectedStoragePaths { get; set; }
 
         /// <summary>
@@ -105,22 +105,22 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     SelectedCorrespondents == other.SelectedCorrespondents ||
                     SelectedCorrespondents != null &&
                     SelectedCorrespondents.SequenceEqual(other.SelectedCorrespondents)
-                ) && 
+                ) &&
                 (
                     SelectedTags == other.SelectedTags ||
                     SelectedTags != null &&
                     SelectedTags.SequenceEqual(other.SelectedTags)
-                ) && 
+                ) &&
                 (
                     SelectedDocumentTypes == other.SelectedDocumentTypes ||
                     SelectedDocumentTypes != null &&
                     SelectedDocumentTypes.SequenceEqual(other.SelectedDocumentTypes)
-                ) && 
+                ) &&
                 (
                     SelectedStoragePaths == other.SelectedStoragePaths ||
                     SelectedStoragePaths != null &&
@@ -138,20 +138,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (SelectedCorrespondents != null)
+                if (SelectedCorrespondents != null)
                     hashCode = hashCode * 59 + SelectedCorrespondents.GetHashCode();
-                    if (SelectedTags != null)
+                if (SelectedTags != null)
                     hashCode = hashCode * 59 + SelectedTags.GetHashCode();
-                    if (SelectedDocumentTypes != null)
+                if (SelectedDocumentTypes != null)
                     hashCode = hashCode * 59 + SelectedDocumentTypes.GetHashCode();
-                    if (SelectedStoragePaths != null)
+                if (SelectedStoragePaths != null)
                     hashCode = hashCode * 59 + SelectedStoragePaths.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2005 left, InlineResponse2005 right)
         {
@@ -163,7 +163,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

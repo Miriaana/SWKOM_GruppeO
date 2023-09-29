@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiStoragePathsBody : IEquatable<ApiStoragePathsBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [Required]
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="path")]
+        [DataMember(Name = "path")]
         public string Path { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="matching_algorithm")]
+        [DataMember(Name = "matching_algorithm")]
         public int? MatchingAlgorithm { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="match")]
+        [DataMember(Name = "match")]
         public string Match { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_insensitive")]
+        [DataMember(Name = "is_insensitive")]
         public bool? IsInsensitive { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="owner")]
+        [DataMember(Name = "owner")]
         public int? Owner { get; set; }
 
         /// <summary>
@@ -123,32 +123,32 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Path == other.Path ||
                     Path != null &&
                     Path.Equals(other.Path)
-                ) && 
+                ) &&
                 (
                     MatchingAlgorithm == other.MatchingAlgorithm ||
                     MatchingAlgorithm != null &&
                     MatchingAlgorithm.Equals(other.MatchingAlgorithm)
-                ) && 
+                ) &&
                 (
                     Match == other.Match ||
                     Match != null &&
                     Match.Equals(other.Match)
-                ) && 
+                ) &&
                 (
                     IsInsensitive == other.IsInsensitive ||
                     IsInsensitive != null &&
                     IsInsensitive.Equals(other.IsInsensitive)
-                ) && 
+                ) &&
                 (
                     Owner == other.Owner ||
                     Owner != null &&
@@ -166,24 +166,24 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Path != null)
+                if (Path != null)
                     hashCode = hashCode * 59 + Path.GetHashCode();
-                    if (MatchingAlgorithm != null)
+                if (MatchingAlgorithm != null)
                     hashCode = hashCode * 59 + MatchingAlgorithm.GetHashCode();
-                    if (Match != null)
+                if (Match != null)
                     hashCode = hashCode * 59 + Match.GetHashCode();
-                    if (IsInsensitive != null)
+                if (IsInsensitive != null)
                     hashCode = hashCode * 59 + IsInsensitive.GetHashCode();
-                    if (Owner != null)
+                if (Owner != null)
                     hashCode = hashCode * 59 + Owner.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiStoragePathsBody left, ApiStoragePathsBody right)
         {
@@ -195,7 +195,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

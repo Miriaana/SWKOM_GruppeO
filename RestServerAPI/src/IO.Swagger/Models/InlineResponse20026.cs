@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20026 : IEquatable<InlineResponse20026>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Success
         /// </summary>
         [Required]
 
-        [DataMember(Name="success")]
+        [DataMember(Name = "success")]
         public bool? Success { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     Success == other.Success ||
                     Success != null &&
                     Success.Equals(other.Success)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Success != null)
+                if (Success != null)
                     hashCode = hashCode * 59 + Success.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20026 left, InlineResponse20026 right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

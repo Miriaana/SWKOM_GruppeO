@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsDateDisplay : IEquatable<ApiuiSettingsSettingsDateDisplay>
-    { 
+    {
         /// <summary>
         /// Gets or Sets DateLocale
         /// </summary>
         [Required]
 
-        [DataMember(Name="date_locale")]
+        [DataMember(Name = "date_locale")]
         public string DateLocale { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="date_format")]
+        [DataMember(Name = "date_format")]
         public string DateFormat { get; set; }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     DateLocale == other.DateLocale ||
                     DateLocale != null &&
                     DateLocale.Equals(other.DateLocale)
-                ) && 
+                ) &&
                 (
                     DateFormat == other.DateFormat ||
                     DateFormat != null &&
@@ -110,16 +110,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (DateLocale != null)
+                if (DateLocale != null)
                     hashCode = hashCode * 59 + DateLocale.GetHashCode();
-                    if (DateFormat != null)
+                if (DateFormat != null)
                     hashCode = hashCode * 59 + DateFormat.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsDateDisplay left, ApiuiSettingsSettingsDateDisplay right)
         {
@@ -131,7 +131,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

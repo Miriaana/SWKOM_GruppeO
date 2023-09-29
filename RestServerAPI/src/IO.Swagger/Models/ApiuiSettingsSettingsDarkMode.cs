@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsDarkMode : IEquatable<ApiuiSettingsSettingsDarkMode>
-    { 
+    {
         /// <summary>
         /// Gets or Sets UseSystem
         /// </summary>
         [Required]
 
-        [DataMember(Name="use_system")]
+        [DataMember(Name = "use_system")]
         public bool? UseSystem { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="enabled")]
+        [DataMember(Name = "enabled")]
         public string Enabled { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="thumb_inverted")]
+        [DataMember(Name = "thumb_inverted")]
         public string ThumbInverted { get; set; }
 
         /// <summary>
@@ -96,17 +96,17 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     UseSystem == other.UseSystem ||
                     UseSystem != null &&
                     UseSystem.Equals(other.UseSystem)
-                ) && 
+                ) &&
                 (
                     Enabled == other.Enabled ||
                     Enabled != null &&
                     Enabled.Equals(other.Enabled)
-                ) && 
+                ) &&
                 (
                     ThumbInverted == other.ThumbInverted ||
                     ThumbInverted != null &&
@@ -124,18 +124,18 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (UseSystem != null)
+                if (UseSystem != null)
                     hashCode = hashCode * 59 + UseSystem.GetHashCode();
-                    if (Enabled != null)
+                if (Enabled != null)
                     hashCode = hashCode * 59 + Enabled.GetHashCode();
-                    if (ThumbInverted != null)
+                if (ThumbInverted != null)
                     hashCode = hashCode * 59 + ThumbInverted.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsDarkMode left, ApiuiSettingsSettingsDarkMode right)
         {
@@ -147,7 +147,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

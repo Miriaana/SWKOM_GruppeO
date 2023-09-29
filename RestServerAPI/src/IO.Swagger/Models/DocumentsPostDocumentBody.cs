@@ -18,54 +18,54 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class DocumentsPostDocumentBody : IEquatable<DocumentsPostDocumentBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
 
-        [DataMember(Name="title")]
+        [DataMember(Name = "title")]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Created
         /// </summary>
 
-        [DataMember(Name="created")]
+        [DataMember(Name = "created")]
         public DateTime? Created { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentType
         /// </summary>
 
-        [DataMember(Name="document_type")]
+        [DataMember(Name = "document_type")]
         public int? DocumentType { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
 
-        [DataMember(Name="tags")]
+        [DataMember(Name = "tags")]
         public List<int?> Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets Correspondent
         /// </summary>
 
-        [DataMember(Name="correspondent")]
+        [DataMember(Name = "correspondent")]
         public int? Correspondent { get; set; }
 
         /// <summary>
         /// Gets or Sets Document
         /// </summary>
 
-        [DataMember(Name="document")]
+        [DataMember(Name = "document")]
         public List<byte[]> Document { get; set; }
 
         /// <summary>
@@ -117,32 +117,32 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Title == other.Title ||
                     Title != null &&
                     Title.Equals(other.Title)
-                ) && 
+                ) &&
                 (
                     Created == other.Created ||
                     Created != null &&
                     Created.Equals(other.Created)
-                ) && 
+                ) &&
                 (
                     DocumentType == other.DocumentType ||
                     DocumentType != null &&
                     DocumentType.Equals(other.DocumentType)
-                ) && 
+                ) &&
                 (
                     Tags == other.Tags ||
                     Tags != null &&
                     Tags.SequenceEqual(other.Tags)
-                ) && 
+                ) &&
                 (
                     Correspondent == other.Correspondent ||
                     Correspondent != null &&
                     Correspondent.Equals(other.Correspondent)
-                ) && 
+                ) &&
                 (
                     Document == other.Document ||
                     Document != null &&
@@ -160,24 +160,24 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Title != null)
+                if (Title != null)
                     hashCode = hashCode * 59 + Title.GetHashCode();
-                    if (Created != null)
+                if (Created != null)
                     hashCode = hashCode * 59 + Created.GetHashCode();
-                    if (DocumentType != null)
+                if (DocumentType != null)
                     hashCode = hashCode * 59 + DocumentType.GetHashCode();
-                    if (Tags != null)
+                if (Tags != null)
                     hashCode = hashCode * 59 + Tags.GetHashCode();
-                    if (Correspondent != null)
+                if (Correspondent != null)
                     hashCode = hashCode * 59 + Correspondent.GetHashCode();
-                    if (Document != null)
+                if (Document != null)
                     hashCode = hashCode * 59 + Document.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(DocumentsPostDocumentBody left, DocumentsPostDocumentBody right)
         {
@@ -189,7 +189,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

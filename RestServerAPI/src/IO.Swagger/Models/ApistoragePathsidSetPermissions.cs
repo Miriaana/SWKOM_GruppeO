@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApistoragePathsidSetPermissions : IEquatable<ApistoragePathsidSetPermissions>
-    { 
+    {
         /// <summary>
         /// Gets or Sets View
         /// </summary>
         [Required]
 
-        [DataMember(Name="view")]
+        [DataMember(Name = "view")]
         public ApistoragePathsidSetPermissionsView View { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="change")]
+        [DataMember(Name = "change")]
         public ApistoragePathsidSetPermissionsView Change { get; set; }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     View == other.View ||
                     View != null &&
                     View.Equals(other.View)
-                ) && 
+                ) &&
                 (
                     Change == other.Change ||
                     Change != null &&
@@ -110,16 +110,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (View != null)
+                if (View != null)
                     hashCode = hashCode * 59 + View.GetHashCode();
-                    if (Change != null)
+                if (Change != null)
                     hashCode = hashCode * 59 + Change.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApistoragePathsidSetPermissions left, ApistoragePathsidSetPermissions right)
         {
@@ -131,7 +131,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

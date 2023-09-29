@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2004 : IEquatable<InlineResponse2004>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="correspondent")]
+        [DataMember(Name = "correspondent")]
         public int? Correspondent { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_type")]
+        [DataMember(Name = "document_type")]
         public int? DocumentType { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="storage_path")]
+        [DataMember(Name = "storage_path")]
         public int? StoragePath { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="title")]
+        [DataMember(Name = "title")]
         public string Title { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="content")]
+        [DataMember(Name = "content")]
         public string Content { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="tags")]
+        [DataMember(Name = "tags")]
         public List<int?> Tags { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="created")]
+        [DataMember(Name = "created")]
         public string Created { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="created_date")]
+        [DataMember(Name = "created_date")]
         public string CreatedDate { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="modified")]
+        [DataMember(Name = "modified")]
         public string Modified { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="added")]
+        [DataMember(Name = "added")]
         public string Added { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="archive_serial_number")]
+        [DataMember(Name = "archive_serial_number")]
         public int? ArchiveSerialNumber { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_file_name")]
+        [DataMember(Name = "original_file_name")]
         public string OriginalFileName { get; set; }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="archived_file_name")]
+        [DataMember(Name = "archived_file_name")]
         public string ArchivedFileName { get; set; }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="owner")]
+        [DataMember(Name = "owner")]
         public int? Owner { get; set; }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="user_can_change")]
+        [DataMember(Name = "user_can_change")]
         public bool? UserCanChange { get; set; }
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="notes")]
-        public List<Object> Notes { get; set; }
+        [DataMember(Name = "notes")]
+        public List<object> Notes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -222,87 +222,87 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Correspondent == other.Correspondent ||
                     Correspondent != null &&
                     Correspondent.Equals(other.Correspondent)
-                ) && 
+                ) &&
                 (
                     DocumentType == other.DocumentType ||
                     DocumentType != null &&
                     DocumentType.Equals(other.DocumentType)
-                ) && 
+                ) &&
                 (
                     StoragePath == other.StoragePath ||
                     StoragePath != null &&
                     StoragePath.Equals(other.StoragePath)
-                ) && 
+                ) &&
                 (
                     Title == other.Title ||
                     Title != null &&
                     Title.Equals(other.Title)
-                ) && 
+                ) &&
                 (
                     Content == other.Content ||
                     Content != null &&
                     Content.Equals(other.Content)
-                ) && 
+                ) &&
                 (
                     Tags == other.Tags ||
                     Tags != null &&
                     Tags.SequenceEqual(other.Tags)
-                ) && 
+                ) &&
                 (
                     Created == other.Created ||
                     Created != null &&
                     Created.Equals(other.Created)
-                ) && 
+                ) &&
                 (
                     CreatedDate == other.CreatedDate ||
                     CreatedDate != null &&
                     CreatedDate.Equals(other.CreatedDate)
-                ) && 
+                ) &&
                 (
                     Modified == other.Modified ||
                     Modified != null &&
                     Modified.Equals(other.Modified)
-                ) && 
+                ) &&
                 (
                     Added == other.Added ||
                     Added != null &&
                     Added.Equals(other.Added)
-                ) && 
+                ) &&
                 (
                     ArchiveSerialNumber == other.ArchiveSerialNumber ||
                     ArchiveSerialNumber != null &&
                     ArchiveSerialNumber.Equals(other.ArchiveSerialNumber)
-                ) && 
+                ) &&
                 (
                     OriginalFileName == other.OriginalFileName ||
                     OriginalFileName != null &&
                     OriginalFileName.Equals(other.OriginalFileName)
-                ) && 
+                ) &&
                 (
                     ArchivedFileName == other.ArchivedFileName ||
                     ArchivedFileName != null &&
                     ArchivedFileName.Equals(other.ArchivedFileName)
-                ) && 
+                ) &&
                 (
                     Owner == other.Owner ||
                     Owner != null &&
                     Owner.Equals(other.Owner)
-                ) && 
+                ) &&
                 (
                     UserCanChange == other.UserCanChange ||
                     UserCanChange != null &&
                     UserCanChange.Equals(other.UserCanChange)
-                ) && 
+                ) &&
                 (
                     Notes == other.Notes ||
                     Notes != null &&
@@ -320,46 +320,46 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Correspondent != null)
+                if (Correspondent != null)
                     hashCode = hashCode * 59 + Correspondent.GetHashCode();
-                    if (DocumentType != null)
+                if (DocumentType != null)
                     hashCode = hashCode * 59 + DocumentType.GetHashCode();
-                    if (StoragePath != null)
+                if (StoragePath != null)
                     hashCode = hashCode * 59 + StoragePath.GetHashCode();
-                    if (Title != null)
+                if (Title != null)
                     hashCode = hashCode * 59 + Title.GetHashCode();
-                    if (Content != null)
+                if (Content != null)
                     hashCode = hashCode * 59 + Content.GetHashCode();
-                    if (Tags != null)
+                if (Tags != null)
                     hashCode = hashCode * 59 + Tags.GetHashCode();
-                    if (Created != null)
+                if (Created != null)
                     hashCode = hashCode * 59 + Created.GetHashCode();
-                    if (CreatedDate != null)
+                if (CreatedDate != null)
                     hashCode = hashCode * 59 + CreatedDate.GetHashCode();
-                    if (Modified != null)
+                if (Modified != null)
                     hashCode = hashCode * 59 + Modified.GetHashCode();
-                    if (Added != null)
+                if (Added != null)
                     hashCode = hashCode * 59 + Added.GetHashCode();
-                    if (ArchiveSerialNumber != null)
+                if (ArchiveSerialNumber != null)
                     hashCode = hashCode * 59 + ArchiveSerialNumber.GetHashCode();
-                    if (OriginalFileName != null)
+                if (OriginalFileName != null)
                     hashCode = hashCode * 59 + OriginalFileName.GetHashCode();
-                    if (ArchivedFileName != null)
+                if (ArchivedFileName != null)
                     hashCode = hashCode * 59 + ArchivedFileName.GetHashCode();
-                    if (Owner != null)
+                if (Owner != null)
                     hashCode = hashCode * 59 + Owner.GetHashCode();
-                    if (UserCanChange != null)
+                if (UserCanChange != null)
                     hashCode = hashCode * 59 + UserCanChange.GetHashCode();
-                    if (Notes != null)
+                if (Notes != null)
                     hashCode = hashCode * 59 + Notes.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2004 left, InlineResponse2004 right)
         {
@@ -371,7 +371,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

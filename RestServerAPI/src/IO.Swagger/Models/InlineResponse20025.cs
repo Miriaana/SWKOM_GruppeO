@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20025 : IEquatable<InlineResponse20025>
-    { 
+    {
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
         [Required]
 
-        [DataMember(Name="display_name")]
+        [DataMember(Name = "display_name")]
         public string DisplayName { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="user")]
+        [DataMember(Name = "user")]
         public InlineResponse20025User User { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="settings")]
+        [DataMember(Name = "settings")]
         public InlineResponse20025Settings Settings { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions")]
+        [DataMember(Name = "permissions")]
         public List<string> Permissions { get; set; }
 
         /// <summary>
@@ -105,22 +105,22 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     DisplayName == other.DisplayName ||
                     DisplayName != null &&
                     DisplayName.Equals(other.DisplayName)
-                ) && 
+                ) &&
                 (
                     User == other.User ||
                     User != null &&
                     User.Equals(other.User)
-                ) && 
+                ) &&
                 (
                     Settings == other.Settings ||
                     Settings != null &&
                     Settings.Equals(other.Settings)
-                ) && 
+                ) &&
                 (
                     Permissions == other.Permissions ||
                     Permissions != null &&
@@ -138,20 +138,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (DisplayName != null)
+                if (DisplayName != null)
                     hashCode = hashCode * 59 + DisplayName.GetHashCode();
-                    if (User != null)
+                if (User != null)
                     hashCode = hashCode * 59 + User.GetHashCode();
-                    if (Settings != null)
+                if (Settings != null)
                     hashCode = hashCode * 59 + Settings.GetHashCode();
-                    if (Permissions != null)
+                if (Permissions != null)
                     hashCode = hashCode * 59 + Permissions.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20025 left, InlineResponse20025 right)
         {
@@ -163,7 +163,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

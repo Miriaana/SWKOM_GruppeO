@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiAcknowledgeTasksBody : IEquatable<ApiAcknowledgeTasksBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Tasks
         /// </summary>
         [Required]
 
-        [DataMember(Name="tasks")]
+        [DataMember(Name = "tasks")]
         public List<int?> Tasks { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     Tasks == other.Tasks ||
                     Tasks != null &&
                     Tasks.SequenceEqual(other.Tasks)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Tasks != null)
+                if (Tasks != null)
                     hashCode = hashCode * 59 + Tasks.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiAcknowledgeTasksBody left, ApiAcknowledgeTasksBody right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

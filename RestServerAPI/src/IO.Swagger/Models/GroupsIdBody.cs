@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class GroupsIdBody : IEquatable<GroupsIdBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions")]
+        [DataMember(Name = "permissions")]
         public List<string> Permissions { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="set_permissions")]
+        [DataMember(Name = "set_permissions")]
         public List<string> SetPermissions { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions_form")]
+        [DataMember(Name = "permissions_form")]
         public ApigroupsidPermissionsForm PermissionsForm { get; set; }
 
         /// <summary>
@@ -114,27 +114,27 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Permissions == other.Permissions ||
                     Permissions != null &&
                     Permissions.SequenceEqual(other.Permissions)
-                ) && 
+                ) &&
                 (
                     SetPermissions == other.SetPermissions ||
                     SetPermissions != null &&
                     SetPermissions.SequenceEqual(other.SetPermissions)
-                ) && 
+                ) &&
                 (
                     PermissionsForm == other.PermissionsForm ||
                     PermissionsForm != null &&
@@ -152,22 +152,22 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Permissions != null)
+                if (Permissions != null)
                     hashCode = hashCode * 59 + Permissions.GetHashCode();
-                    if (SetPermissions != null)
+                if (SetPermissions != null)
                     hashCode = hashCode * 59 + SetPermissions.GetHashCode();
-                    if (PermissionsForm != null)
+                if (PermissionsForm != null)
                     hashCode = hashCode * 59 + PermissionsForm.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(GroupsIdBody left, GroupsIdBody right)
         {
@@ -179,7 +179,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

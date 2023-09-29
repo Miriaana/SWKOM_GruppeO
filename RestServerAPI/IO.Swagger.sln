@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IO.Swagger", "src\IO.Swagger\IO.Swagger.csproj", "{A96DACDB-97A9-4B85-8C54-54C859D323AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestApi", "src\IO.Swagger\PaperlessRestApi.csproj", "{A96DACDB-97A9-4B85-8C54-54C859D323AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {385E0567-2EC0-4AAC-A163-8A5FBA156608}
+		SolutionGuid = {ACB26AC4-445E-4012-99E3-660FBC974B1B}
 	EndGlobalSection
 EndGlobal

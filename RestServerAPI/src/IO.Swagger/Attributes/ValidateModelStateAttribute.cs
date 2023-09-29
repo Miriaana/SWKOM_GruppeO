@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace IO.Swagger.Attributes
+namespace PaperlessRestApi.Attributes
 {
     /// <summary>
     /// Model state validation attribute
@@ -26,7 +26,7 @@ namespace IO.Swagger.Attributes
                 {
                     object args = null;
                     if (context.ActionArguments.ContainsKey(parameter.Name))
-                    { 
+                    {
                         args = context.ActionArguments[parameter.Name];
                     }
 

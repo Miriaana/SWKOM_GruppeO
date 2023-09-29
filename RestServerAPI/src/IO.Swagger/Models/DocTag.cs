@@ -18,75 +18,75 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class DocTag : IEquatable<DocTag>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public long? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
 
-        [DataMember(Name="slug")]
+        [DataMember(Name = "slug")]
         public string Slug { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Color
         /// </summary>
 
-        [DataMember(Name="color")]
+        [DataMember(Name = "color")]
         public string Color { get; set; }
 
         /// <summary>
         /// Gets or Sets Match
         /// </summary>
 
-        [DataMember(Name="match")]
+        [DataMember(Name = "match")]
         public string Match { get; set; }
 
         /// <summary>
         /// Gets or Sets MatchingAlgorithm
         /// </summary>
 
-        [DataMember(Name="matching_algorithm")]
+        [DataMember(Name = "matching_algorithm")]
         public long? MatchingAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or Sets IsInsensitive
         /// </summary>
 
-        [DataMember(Name="is_insensitive")]
+        [DataMember(Name = "is_insensitive")]
         public bool? IsInsensitive { get; set; }
 
         /// <summary>
         /// Gets or Sets IsInboxTag
         /// </summary>
 
-        [DataMember(Name="is_inbox_tag")]
+        [DataMember(Name = "is_inbox_tag")]
         public bool? IsInboxTag { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentCount
         /// </summary>
 
-        [DataMember(Name="document_count")]
+        [DataMember(Name = "document_count")]
         public long? DocumentCount { get; set; }
 
         /// <summary>
@@ -141,47 +141,47 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Slug == other.Slug ||
                     Slug != null &&
                     Slug.Equals(other.Slug)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Color == other.Color ||
                     Color != null &&
                     Color.Equals(other.Color)
-                ) && 
+                ) &&
                 (
                     Match == other.Match ||
                     Match != null &&
                     Match.Equals(other.Match)
-                ) && 
+                ) &&
                 (
                     MatchingAlgorithm == other.MatchingAlgorithm ||
                     MatchingAlgorithm != null &&
                     MatchingAlgorithm.Equals(other.MatchingAlgorithm)
-                ) && 
+                ) &&
                 (
                     IsInsensitive == other.IsInsensitive ||
                     IsInsensitive != null &&
                     IsInsensitive.Equals(other.IsInsensitive)
-                ) && 
+                ) &&
                 (
                     IsInboxTag == other.IsInboxTag ||
                     IsInboxTag != null &&
                     IsInboxTag.Equals(other.IsInboxTag)
-                ) && 
+                ) &&
                 (
                     DocumentCount == other.DocumentCount ||
                     DocumentCount != null &&
@@ -199,30 +199,30 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Slug != null)
+                if (Slug != null)
                     hashCode = hashCode * 59 + Slug.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Color != null)
+                if (Color != null)
                     hashCode = hashCode * 59 + Color.GetHashCode();
-                    if (Match != null)
+                if (Match != null)
                     hashCode = hashCode * 59 + Match.GetHashCode();
-                    if (MatchingAlgorithm != null)
+                if (MatchingAlgorithm != null)
                     hashCode = hashCode * 59 + MatchingAlgorithm.GetHashCode();
-                    if (IsInsensitive != null)
+                if (IsInsensitive != null)
                     hashCode = hashCode * 59 + IsInsensitive.GetHashCode();
-                    if (IsInboxTag != null)
+                if (IsInboxTag != null)
                     hashCode = hashCode * 59 + IsInboxTag.GetHashCode();
-                    if (DocumentCount != null)
+                if (DocumentCount != null)
                     hashCode = hashCode * 59 + DocumentCount.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(DocTag left, DocTag right)
         {
@@ -234,7 +234,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

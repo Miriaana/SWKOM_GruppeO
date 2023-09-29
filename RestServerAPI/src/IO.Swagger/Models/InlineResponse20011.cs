@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20011 : IEquatable<InlineResponse20011>
-    { 
+    {
         /// <summary>
         /// Gets or Sets DocumentsTotal
         /// </summary>
         [Required]
 
-        [DataMember(Name="documents_total")]
+        [DataMember(Name = "documents_total")]
         public int? DocumentsTotal { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="documents_inbox")]
+        [DataMember(Name = "documents_inbox")]
         public int? DocumentsInbox { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="inbox_tag")]
+        [DataMember(Name = "inbox_tag")]
         public int? InboxTag { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_file_type_counts")]
+        [DataMember(Name = "document_file_type_counts")]
         public List<InlineResponse20011DocumentFileTypeCounts> DocumentFileTypeCounts { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="character_count")]
+        [DataMember(Name = "character_count")]
         public int? CharacterCount { get; set; }
 
         /// <summary>
@@ -114,27 +114,27 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     DocumentsTotal == other.DocumentsTotal ||
                     DocumentsTotal != null &&
                     DocumentsTotal.Equals(other.DocumentsTotal)
-                ) && 
+                ) &&
                 (
                     DocumentsInbox == other.DocumentsInbox ||
                     DocumentsInbox != null &&
                     DocumentsInbox.Equals(other.DocumentsInbox)
-                ) && 
+                ) &&
                 (
                     InboxTag == other.InboxTag ||
                     InboxTag != null &&
                     InboxTag.Equals(other.InboxTag)
-                ) && 
+                ) &&
                 (
                     DocumentFileTypeCounts == other.DocumentFileTypeCounts ||
                     DocumentFileTypeCounts != null &&
                     DocumentFileTypeCounts.SequenceEqual(other.DocumentFileTypeCounts)
-                ) && 
+                ) &&
                 (
                     CharacterCount == other.CharacterCount ||
                     CharacterCount != null &&
@@ -152,22 +152,22 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (DocumentsTotal != null)
+                if (DocumentsTotal != null)
                     hashCode = hashCode * 59 + DocumentsTotal.GetHashCode();
-                    if (DocumentsInbox != null)
+                if (DocumentsInbox != null)
                     hashCode = hashCode * 59 + DocumentsInbox.GetHashCode();
-                    if (InboxTag != null)
+                if (InboxTag != null)
                     hashCode = hashCode * 59 + InboxTag.GetHashCode();
-                    if (DocumentFileTypeCounts != null)
+                if (DocumentFileTypeCounts != null)
                     hashCode = hashCode * 59 + DocumentFileTypeCounts.GetHashCode();
-                    if (CharacterCount != null)
+                if (CharacterCount != null)
                     hashCode = hashCode * 59 + CharacterCount.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20011 left, InlineResponse20011 right)
         {
@@ -179,7 +179,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

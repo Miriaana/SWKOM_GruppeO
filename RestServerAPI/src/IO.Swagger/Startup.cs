@@ -21,10 +21,9 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using IO.Swagger.Filters;
+using PaperlessRestApi.Filters;
 
-
-namespace IO.Swagger
+namespace PaperlessRestApi
 {
     /// <summary>
     /// Startup
@@ -77,9 +76,9 @@ namespace IO.Swagger
                         Description = "Paperless Rest Server (ASP.NET Core 3.1)",
                         Contact = new OpenApiContact()
                         {
-                           Name = "Swagger Codegen Contributors",
-                           Url = new Uri("https://github.com/swagger-api/swagger-codegen"),
-                           Email = ""
+                            Name = "Swagger Codegen Contributors",
+                            Url = new Uri("https://github.com/swagger-api/swagger-codegen"),
+                            Email = ""
                         },
                         TermsOfService = new Uri("https://google.at")
                     });

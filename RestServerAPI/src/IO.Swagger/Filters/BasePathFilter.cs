@@ -4,7 +4,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
 
-namespace IO.Swagger.Filters
+namespace PaperlessRestApi.Filters
 {
     /// <summary>
     /// BasePath Document Filter sets BasePath property of Swagger and removes it from the individual URL paths
@@ -33,15 +33,15 @@ namespace IO.Swagger.Filters
         /// <param name="context">FilterContext</param>
         public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
         {
-            swaggerDoc.Servers.Add(new OpenApiServer() { Url = this.BasePath });
+            swaggerDoc.Servers.Add(new OpenApiServer() { Url = BasePath });
 
-            var pathsToModify = swaggerDoc.Paths.Where(p => p.Key.StartsWith(this.BasePath)).ToList();
+            var pathsToModify = swaggerDoc.Paths.Where(p => p.Key.StartsWith(BasePath)).ToList();
 
             foreach (var path in pathsToModify)
             {
-                if (path.Key.StartsWith(this.BasePath))
+                if (path.Key.StartsWith(BasePath))
                 {
-                    string newKey = Regex.Replace(path.Key, $"^{this.BasePath}", string.Empty);
+                    string newKey = Regex.Replace(path.Key, $"^{BasePath}", string.Empty);
                     swaggerDoc.Paths.Remove(path.Key);
                     swaggerDoc.Paths.Add(newKey, path.Value);
                 }

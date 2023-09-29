@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApigroupsidPermissionsForm : IEquatable<ApigroupsidPermissionsForm>
-    { 
+    {
         /// <summary>
         /// Gets or Sets SetPermissions
         /// </summary>
         [Required]
 
-        [DataMember(Name="set_permissions")]
+        [DataMember(Name = "set_permissions")]
         public List<string> SetPermissions { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     SetPermissions == other.SetPermissions ||
                     SetPermissions != null &&
                     SetPermissions.SequenceEqual(other.SetPermissions)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (SetPermissions != null)
+                if (SetPermissions != null)
                     hashCode = hashCode * 59 + SetPermissions.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApigroupsidPermissionsForm left, ApigroupsidPermissionsForm right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse20022 : IEquatable<InlineResponse20022>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Count
         /// </summary>
         [Required]
 
-        [DataMember(Name="count")]
+        [DataMember(Name = "count")]
         public int? Count { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="next")]
+        [DataMember(Name = "next")]
         public bool? Next { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="previous")]
+        [DataMember(Name = "previous")]
         public bool? Previous { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="all")]
+        [DataMember(Name = "all")]
         public List<int?> All { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="results")]
+        [DataMember(Name = "results")]
         public List<InlineResponse20022Results> Results { get; set; }
 
         /// <summary>
@@ -114,27 +114,27 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Count == other.Count ||
                     Count != null &&
                     Count.Equals(other.Count)
-                ) && 
+                ) &&
                 (
                     Next == other.Next ||
                     Next != null &&
                     Next.Equals(other.Next)
-                ) && 
+                ) &&
                 (
                     Previous == other.Previous ||
                     Previous != null &&
                     Previous.Equals(other.Previous)
-                ) && 
+                ) &&
                 (
                     All == other.All ||
                     All != null &&
                     All.SequenceEqual(other.All)
-                ) && 
+                ) &&
                 (
                     Results == other.Results ||
                     Results != null &&
@@ -152,22 +152,22 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Count != null)
+                if (Count != null)
                     hashCode = hashCode * 59 + Count.GetHashCode();
-                    if (Next != null)
+                if (Next != null)
                     hashCode = hashCode * 59 + Next.GetHashCode();
-                    if (Previous != null)
+                if (Previous != null)
                     hashCode = hashCode * 59 + Previous.GetHashCode();
-                    if (All != null)
+                if (All != null)
                     hashCode = hashCode * 59 + All.GetHashCode();
-                    if (Results != null)
+                if (Results != null)
                     hashCode = hashCode * 59 + Results.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse20022 left, InlineResponse20022 right)
         {
@@ -179,7 +179,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

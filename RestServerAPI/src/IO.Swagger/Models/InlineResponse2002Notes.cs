@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2002Notes : IEquatable<InlineResponse2002Notes>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="note")]
+        [DataMember(Name = "note")]
         public string Note { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="created")]
+        [DataMember(Name = "created")]
         public string Created { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document")]
+        [DataMember(Name = "document")]
         public int? Document { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="user")]
+        [DataMember(Name = "user")]
         public int? User { get; set; }
 
         /// <summary>
@@ -114,27 +114,27 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Note == other.Note ||
                     Note != null &&
                     Note.Equals(other.Note)
-                ) && 
+                ) &&
                 (
                     Created == other.Created ||
                     Created != null &&
                     Created.Equals(other.Created)
-                ) && 
+                ) &&
                 (
                     Document == other.Document ||
                     Document != null &&
                     Document.Equals(other.Document)
-                ) && 
+                ) &&
                 (
                     User == other.User ||
                     User != null &&
@@ -152,22 +152,22 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Note != null)
+                if (Note != null)
                     hashCode = hashCode * 59 + Note.GetHashCode();
-                    if (Created != null)
+                if (Created != null)
                     hashCode = hashCode * 59 + Created.GetHashCode();
-                    if (Document != null)
+                if (Document != null)
                     hashCode = hashCode * 59 + Document.GetHashCode();
-                    if (User != null)
+                if (User != null)
                     hashCode = hashCode * 59 + User.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2002Notes left, InlineResponse2002Notes right)
         {
@@ -179,7 +179,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

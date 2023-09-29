@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class UsersIdBody : IEquatable<UsersIdBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="email")]
+        [DataMember(Name = "email")]
         public string Email { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="password")]
+        [DataMember(Name = "password")]
         public string Password { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="first_name")]
+        [DataMember(Name = "first_name")]
         public string FirstName { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="last_name")]
+        [DataMember(Name = "last_name")]
         public string LastName { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="date_joined")]
+        [DataMember(Name = "date_joined")]
         public string DateJoined { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_staff")]
+        [DataMember(Name = "is_staff")]
         public bool? IsStaff { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_active")]
+        [DataMember(Name = "is_active")]
         public bool? IsActive { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_superuser")]
+        [DataMember(Name = "is_superuser")]
         public bool? IsSuperuser { get; set; }
 
         /// <summary>
@@ -111,23 +111,23 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="groups")]
-        public List<Object> Groups { get; set; }
+        [DataMember(Name = "groups")]
+        public List<object> Groups { get; set; }
 
         /// <summary>
         /// Gets or Sets UserPermissions
         /// </summary>
         [Required]
 
-        [DataMember(Name="user_permissions")]
-        public List<Object> UserPermissions { get; set; }
+        [DataMember(Name = "user_permissions")]
+        public List<object> UserPermissions { get; set; }
 
         /// <summary>
         /// Gets or Sets InheritedPermissions
         /// </summary>
         [Required]
 
-        [DataMember(Name="inherited_permissions")]
+        [DataMember(Name = "inherited_permissions")]
         public List<string> InheritedPermissions { get; set; }
 
         /// <summary>
@@ -135,8 +135,8 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions_form")]
-        public Object PermissionsForm { get; set; }
+        [DataMember(Name = "permissions_form")]
+        public object PermissionsForm { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -195,72 +195,72 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Username == other.Username ||
                     Username != null &&
                     Username.Equals(other.Username)
-                ) && 
+                ) &&
                 (
                     Email == other.Email ||
                     Email != null &&
                     Email.Equals(other.Email)
-                ) && 
+                ) &&
                 (
                     Password == other.Password ||
                     Password != null &&
                     Password.Equals(other.Password)
-                ) && 
+                ) &&
                 (
                     FirstName == other.FirstName ||
                     FirstName != null &&
                     FirstName.Equals(other.FirstName)
-                ) && 
+                ) &&
                 (
                     LastName == other.LastName ||
                     LastName != null &&
                     LastName.Equals(other.LastName)
-                ) && 
+                ) &&
                 (
                     DateJoined == other.DateJoined ||
                     DateJoined != null &&
                     DateJoined.Equals(other.DateJoined)
-                ) && 
+                ) &&
                 (
                     IsStaff == other.IsStaff ||
                     IsStaff != null &&
                     IsStaff.Equals(other.IsStaff)
-                ) && 
+                ) &&
                 (
                     IsActive == other.IsActive ||
                     IsActive != null &&
                     IsActive.Equals(other.IsActive)
-                ) && 
+                ) &&
                 (
                     IsSuperuser == other.IsSuperuser ||
                     IsSuperuser != null &&
                     IsSuperuser.Equals(other.IsSuperuser)
-                ) && 
+                ) &&
                 (
                     Groups == other.Groups ||
                     Groups != null &&
                     Groups.SequenceEqual(other.Groups)
-                ) && 
+                ) &&
                 (
                     UserPermissions == other.UserPermissions ||
                     UserPermissions != null &&
                     UserPermissions.SequenceEqual(other.UserPermissions)
-                ) && 
+                ) &&
                 (
                     InheritedPermissions == other.InheritedPermissions ||
                     InheritedPermissions != null &&
                     InheritedPermissions.SequenceEqual(other.InheritedPermissions)
-                ) && 
+                ) &&
                 (
                     PermissionsForm == other.PermissionsForm ||
                     PermissionsForm != null &&
@@ -278,40 +278,40 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
-                    if (Email != null)
+                if (Email != null)
                     hashCode = hashCode * 59 + Email.GetHashCode();
-                    if (Password != null)
+                if (Password != null)
                     hashCode = hashCode * 59 + Password.GetHashCode();
-                    if (FirstName != null)
+                if (FirstName != null)
                     hashCode = hashCode * 59 + FirstName.GetHashCode();
-                    if (LastName != null)
+                if (LastName != null)
                     hashCode = hashCode * 59 + LastName.GetHashCode();
-                    if (DateJoined != null)
+                if (DateJoined != null)
                     hashCode = hashCode * 59 + DateJoined.GetHashCode();
-                    if (IsStaff != null)
+                if (IsStaff != null)
                     hashCode = hashCode * 59 + IsStaff.GetHashCode();
-                    if (IsActive != null)
+                if (IsActive != null)
                     hashCode = hashCode * 59 + IsActive.GetHashCode();
-                    if (IsSuperuser != null)
+                if (IsSuperuser != null)
                     hashCode = hashCode * 59 + IsSuperuser.GetHashCode();
-                    if (Groups != null)
+                if (Groups != null)
                     hashCode = hashCode * 59 + Groups.GetHashCode();
-                    if (UserPermissions != null)
+                if (UserPermissions != null)
                     hashCode = hashCode * 59 + UserPermissions.GetHashCode();
-                    if (InheritedPermissions != null)
+                if (InheritedPermissions != null)
                     hashCode = hashCode * 59 + InheritedPermissions.GetHashCode();
-                    if (PermissionsForm != null)
+                if (PermissionsForm != null)
                     hashCode = hashCode * 59 + PermissionsForm.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(UsersIdBody left, UsersIdBody right)
         {
@@ -323,7 +323,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

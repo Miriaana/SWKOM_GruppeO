@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsSavedViews : IEquatable<ApiuiSettingsSettingsSavedViews>
-    { 
+    {
         /// <summary>
         /// Gets or Sets WarnOnUnsavedChange
         /// </summary>
         [Required]
 
-        [DataMember(Name="warn_on_unsaved_change")]
+        [DataMember(Name = "warn_on_unsaved_change")]
         public bool? WarnOnUnsavedChange { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     WarnOnUnsavedChange == other.WarnOnUnsavedChange ||
                     WarnOnUnsavedChange != null &&
                     WarnOnUnsavedChange.Equals(other.WarnOnUnsavedChange)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (WarnOnUnsavedChange != null)
+                if (WarnOnUnsavedChange != null)
                     hashCode = hashCode * 59 + WarnOnUnsavedChange.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsSavedViews left, ApiuiSettingsSettingsSavedViews right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

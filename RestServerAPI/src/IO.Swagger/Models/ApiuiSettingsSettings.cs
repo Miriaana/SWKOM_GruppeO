@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettings : IEquatable<ApiuiSettingsSettings>
-    { 
+    {
         /// <summary>
         /// Gets or Sets UpdateChecking
         /// </summary>
         [Required]
 
-        [DataMember(Name="update_checking")]
+        [DataMember(Name = "update_checking")]
         public ApiuiSettingsSettingsUpdateChecking UpdateChecking { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="tour_complete")]
+        [DataMember(Name = "tour_complete")]
         public bool? TourComplete { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="bulk_edit")]
+        [DataMember(Name = "bulk_edit")]
         public ApiuiSettingsSettingsBulkEdit BulkEdit { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="documentListSize")]
+        [DataMember(Name = "documentListSize")]
         public int? DocumentListSize { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="slim_sidebar")]
+        [DataMember(Name = "slim_sidebar")]
         public bool? SlimSidebar { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="dark_mode")]
+        [DataMember(Name = "dark_mode")]
         public ApiuiSettingsSettingsDarkMode DarkMode { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="theme")]
+        [DataMember(Name = "theme")]
         public ApiuiSettingsSettingsTheme Theme { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_details")]
+        [DataMember(Name = "document_details")]
         public ApiuiSettingsSettingsDocumentDetails DocumentDetails { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="date_display")]
+        [DataMember(Name = "date_display")]
         public ApiuiSettingsSettingsDateDisplay DateDisplay { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="notifications")]
+        [DataMember(Name = "notifications")]
         public ApiuiSettingsSettingsNotifications Notifications { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="notes_enabled")]
+        [DataMember(Name = "notes_enabled")]
         public bool? NotesEnabled { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="saved_views")]
+        [DataMember(Name = "saved_views")]
         public ApiuiSettingsSettingsSavedViews SavedViews { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="language")]
+        [DataMember(Name = "language")]
         public string Language { get; set; }
 
         /// <summary>
@@ -186,67 +186,67 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     UpdateChecking == other.UpdateChecking ||
                     UpdateChecking != null &&
                     UpdateChecking.Equals(other.UpdateChecking)
-                ) && 
+                ) &&
                 (
                     TourComplete == other.TourComplete ||
                     TourComplete != null &&
                     TourComplete.Equals(other.TourComplete)
-                ) && 
+                ) &&
                 (
                     BulkEdit == other.BulkEdit ||
                     BulkEdit != null &&
                     BulkEdit.Equals(other.BulkEdit)
-                ) && 
+                ) &&
                 (
                     DocumentListSize == other.DocumentListSize ||
                     DocumentListSize != null &&
                     DocumentListSize.Equals(other.DocumentListSize)
-                ) && 
+                ) &&
                 (
                     SlimSidebar == other.SlimSidebar ||
                     SlimSidebar != null &&
                     SlimSidebar.Equals(other.SlimSidebar)
-                ) && 
+                ) &&
                 (
                     DarkMode == other.DarkMode ||
                     DarkMode != null &&
                     DarkMode.Equals(other.DarkMode)
-                ) && 
+                ) &&
                 (
                     Theme == other.Theme ||
                     Theme != null &&
                     Theme.Equals(other.Theme)
-                ) && 
+                ) &&
                 (
                     DocumentDetails == other.DocumentDetails ||
                     DocumentDetails != null &&
                     DocumentDetails.Equals(other.DocumentDetails)
-                ) && 
+                ) &&
                 (
                     DateDisplay == other.DateDisplay ||
                     DateDisplay != null &&
                     DateDisplay.Equals(other.DateDisplay)
-                ) && 
+                ) &&
                 (
                     Notifications == other.Notifications ||
                     Notifications != null &&
                     Notifications.Equals(other.Notifications)
-                ) && 
+                ) &&
                 (
                     NotesEnabled == other.NotesEnabled ||
                     NotesEnabled != null &&
                     NotesEnabled.Equals(other.NotesEnabled)
-                ) && 
+                ) &&
                 (
                     SavedViews == other.SavedViews ||
                     SavedViews != null &&
                     SavedViews.Equals(other.SavedViews)
-                ) && 
+                ) &&
                 (
                     Language == other.Language ||
                     Language != null &&
@@ -264,38 +264,38 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (UpdateChecking != null)
+                if (UpdateChecking != null)
                     hashCode = hashCode * 59 + UpdateChecking.GetHashCode();
-                    if (TourComplete != null)
+                if (TourComplete != null)
                     hashCode = hashCode * 59 + TourComplete.GetHashCode();
-                    if (BulkEdit != null)
+                if (BulkEdit != null)
                     hashCode = hashCode * 59 + BulkEdit.GetHashCode();
-                    if (DocumentListSize != null)
+                if (DocumentListSize != null)
                     hashCode = hashCode * 59 + DocumentListSize.GetHashCode();
-                    if (SlimSidebar != null)
+                if (SlimSidebar != null)
                     hashCode = hashCode * 59 + SlimSidebar.GetHashCode();
-                    if (DarkMode != null)
+                if (DarkMode != null)
                     hashCode = hashCode * 59 + DarkMode.GetHashCode();
-                    if (Theme != null)
+                if (Theme != null)
                     hashCode = hashCode * 59 + Theme.GetHashCode();
-                    if (DocumentDetails != null)
+                if (DocumentDetails != null)
                     hashCode = hashCode * 59 + DocumentDetails.GetHashCode();
-                    if (DateDisplay != null)
+                if (DateDisplay != null)
                     hashCode = hashCode * 59 + DateDisplay.GetHashCode();
-                    if (Notifications != null)
+                if (Notifications != null)
                     hashCode = hashCode * 59 + Notifications.GetHashCode();
-                    if (NotesEnabled != null)
+                if (NotesEnabled != null)
                     hashCode = hashCode * 59 + NotesEnabled.GetHashCode();
-                    if (SavedViews != null)
+                if (SavedViews != null)
                     hashCode = hashCode * 59 + SavedViews.GetHashCode();
-                    if (Language != null)
+                if (Language != null)
                     hashCode = hashCode * 59 + Language.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettings left, ApiuiSettingsSettings right)
         {
@@ -307,7 +307,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

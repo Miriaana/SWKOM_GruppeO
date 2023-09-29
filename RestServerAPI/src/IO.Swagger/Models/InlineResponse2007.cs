@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2007 : IEquatable<InlineResponse2007>
-    { 
+    {
         /// <summary>
         /// Gets or Sets OriginalChecksum
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_checksum")]
+        [DataMember(Name = "original_checksum")]
         public string OriginalChecksum { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_size")]
+        [DataMember(Name = "original_size")]
         public int? OriginalSize { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_mime_type")]
+        [DataMember(Name = "original_mime_type")]
         public string OriginalMimeType { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="media_filename")]
+        [DataMember(Name = "media_filename")]
         public string MediaFilename { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="has_archive_version")]
+        [DataMember(Name = "has_archive_version")]
         public bool? HasArchiveVersion { get; set; }
 
         /// <summary>
@@ -71,15 +71,15 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_metadata")]
-        public List<Object> OriginalMetadata { get; set; }
+        [DataMember(Name = "original_metadata")]
+        public List<object> OriginalMetadata { get; set; }
 
         /// <summary>
         /// Gets or Sets ArchiveChecksum
         /// </summary>
         [Required]
 
-        [DataMember(Name="archive_checksum")]
+        [DataMember(Name = "archive_checksum")]
         public string ArchiveChecksum { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="archive_media_filename")]
+        [DataMember(Name = "archive_media_filename")]
         public string ArchiveMediaFilename { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="original_filename")]
+        [DataMember(Name = "original_filename")]
         public string OriginalFilename { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="lang")]
+        [DataMember(Name = "lang")]
         public string Lang { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="archive_size")]
+        [DataMember(Name = "archive_size")]
         public int? ArchiveSize { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="archive_metadata")]
+        [DataMember(Name = "archive_metadata")]
         public List<InlineResponse2007ArchiveMetadata> ArchiveMetadata { get; set; }
 
         /// <summary>
@@ -177,62 +177,62 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     OriginalChecksum == other.OriginalChecksum ||
                     OriginalChecksum != null &&
                     OriginalChecksum.Equals(other.OriginalChecksum)
-                ) && 
+                ) &&
                 (
                     OriginalSize == other.OriginalSize ||
                     OriginalSize != null &&
                     OriginalSize.Equals(other.OriginalSize)
-                ) && 
+                ) &&
                 (
                     OriginalMimeType == other.OriginalMimeType ||
                     OriginalMimeType != null &&
                     OriginalMimeType.Equals(other.OriginalMimeType)
-                ) && 
+                ) &&
                 (
                     MediaFilename == other.MediaFilename ||
                     MediaFilename != null &&
                     MediaFilename.Equals(other.MediaFilename)
-                ) && 
+                ) &&
                 (
                     HasArchiveVersion == other.HasArchiveVersion ||
                     HasArchiveVersion != null &&
                     HasArchiveVersion.Equals(other.HasArchiveVersion)
-                ) && 
+                ) &&
                 (
                     OriginalMetadata == other.OriginalMetadata ||
                     OriginalMetadata != null &&
                     OriginalMetadata.SequenceEqual(other.OriginalMetadata)
-                ) && 
+                ) &&
                 (
                     ArchiveChecksum == other.ArchiveChecksum ||
                     ArchiveChecksum != null &&
                     ArchiveChecksum.Equals(other.ArchiveChecksum)
-                ) && 
+                ) &&
                 (
                     ArchiveMediaFilename == other.ArchiveMediaFilename ||
                     ArchiveMediaFilename != null &&
                     ArchiveMediaFilename.Equals(other.ArchiveMediaFilename)
-                ) && 
+                ) &&
                 (
                     OriginalFilename == other.OriginalFilename ||
                     OriginalFilename != null &&
                     OriginalFilename.Equals(other.OriginalFilename)
-                ) && 
+                ) &&
                 (
                     Lang == other.Lang ||
                     Lang != null &&
                     Lang.Equals(other.Lang)
-                ) && 
+                ) &&
                 (
                     ArchiveSize == other.ArchiveSize ||
                     ArchiveSize != null &&
                     ArchiveSize.Equals(other.ArchiveSize)
-                ) && 
+                ) &&
                 (
                     ArchiveMetadata == other.ArchiveMetadata ||
                     ArchiveMetadata != null &&
@@ -250,36 +250,36 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (OriginalChecksum != null)
+                if (OriginalChecksum != null)
                     hashCode = hashCode * 59 + OriginalChecksum.GetHashCode();
-                    if (OriginalSize != null)
+                if (OriginalSize != null)
                     hashCode = hashCode * 59 + OriginalSize.GetHashCode();
-                    if (OriginalMimeType != null)
+                if (OriginalMimeType != null)
                     hashCode = hashCode * 59 + OriginalMimeType.GetHashCode();
-                    if (MediaFilename != null)
+                if (MediaFilename != null)
                     hashCode = hashCode * 59 + MediaFilename.GetHashCode();
-                    if (HasArchiveVersion != null)
+                if (HasArchiveVersion != null)
                     hashCode = hashCode * 59 + HasArchiveVersion.GetHashCode();
-                    if (OriginalMetadata != null)
+                if (OriginalMetadata != null)
                     hashCode = hashCode * 59 + OriginalMetadata.GetHashCode();
-                    if (ArchiveChecksum != null)
+                if (ArchiveChecksum != null)
                     hashCode = hashCode * 59 + ArchiveChecksum.GetHashCode();
-                    if (ArchiveMediaFilename != null)
+                if (ArchiveMediaFilename != null)
                     hashCode = hashCode * 59 + ArchiveMediaFilename.GetHashCode();
-                    if (OriginalFilename != null)
+                if (OriginalFilename != null)
                     hashCode = hashCode * 59 + OriginalFilename.GetHashCode();
-                    if (Lang != null)
+                if (Lang != null)
                     hashCode = hashCode * 59 + Lang.GetHashCode();
-                    if (ArchiveSize != null)
+                if (ArchiveSize != null)
                     hashCode = hashCode * 59 + ArchiveSize.GetHashCode();
-                    if (ArchiveMetadata != null)
+                if (ArchiveMetadata != null)
                     hashCode = hashCode * 59 + ArchiveMetadata.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2007 left, InlineResponse2007 right)
         {
@@ -291,7 +291,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

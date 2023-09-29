@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApisavedViewsFilterRules : IEquatable<ApisavedViewsFilterRules>
-    { 
+    {
         /// <summary>
         /// Gets or Sets RuleType
         /// </summary>
         [Required]
 
-        [DataMember(Name="rule_type")]
+        [DataMember(Name = "rule_type")]
         public int? RuleType { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="value")]
+        [DataMember(Name = "value")]
         public string Value { get; set; }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     RuleType == other.RuleType ||
                     RuleType != null &&
                     RuleType.Equals(other.RuleType)
-                ) && 
+                ) &&
                 (
                     Value == other.Value ||
                     Value != null &&
@@ -110,16 +110,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (RuleType != null)
+                if (RuleType != null)
                     hashCode = hashCode * 59 + RuleType.GetHashCode();
-                    if (Value != null)
+                if (Value != null)
                     hashCode = hashCode * 59 + Value.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApisavedViewsFilterRules left, ApisavedViewsFilterRules right)
         {
@@ -131,7 +131,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

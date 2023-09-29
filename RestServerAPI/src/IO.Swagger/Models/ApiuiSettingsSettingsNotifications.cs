@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsNotifications : IEquatable<ApiuiSettingsSettingsNotifications>
-    { 
+    {
         /// <summary>
         /// Gets or Sets ConsumerNewDocuments
         /// </summary>
         [Required]
 
-        [DataMember(Name="consumer_new_documents")]
+        [DataMember(Name = "consumer_new_documents")]
         public bool? ConsumerNewDocuments { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="consumer_success")]
+        [DataMember(Name = "consumer_success")]
         public bool? ConsumerSuccess { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="consumer_failed")]
+        [DataMember(Name = "consumer_failed")]
         public bool? ConsumerFailed { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="consumer_suppress_on_dashboard")]
+        [DataMember(Name = "consumer_suppress_on_dashboard")]
         public bool? ConsumerSuppressOnDashboard { get; set; }
 
         /// <summary>
@@ -105,22 +105,22 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     ConsumerNewDocuments == other.ConsumerNewDocuments ||
                     ConsumerNewDocuments != null &&
                     ConsumerNewDocuments.Equals(other.ConsumerNewDocuments)
-                ) && 
+                ) &&
                 (
                     ConsumerSuccess == other.ConsumerSuccess ||
                     ConsumerSuccess != null &&
                     ConsumerSuccess.Equals(other.ConsumerSuccess)
-                ) && 
+                ) &&
                 (
                     ConsumerFailed == other.ConsumerFailed ||
                     ConsumerFailed != null &&
                     ConsumerFailed.Equals(other.ConsumerFailed)
-                ) && 
+                ) &&
                 (
                     ConsumerSuppressOnDashboard == other.ConsumerSuppressOnDashboard ||
                     ConsumerSuppressOnDashboard != null &&
@@ -138,20 +138,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (ConsumerNewDocuments != null)
+                if (ConsumerNewDocuments != null)
                     hashCode = hashCode * 59 + ConsumerNewDocuments.GetHashCode();
-                    if (ConsumerSuccess != null)
+                if (ConsumerSuccess != null)
                     hashCode = hashCode * 59 + ConsumerSuccess.GetHashCode();
-                    if (ConsumerFailed != null)
+                if (ConsumerFailed != null)
                     hashCode = hashCode * 59 + ConsumerFailed.GetHashCode();
-                    if (ConsumerSuppressOnDashboard != null)
+                if (ConsumerSuppressOnDashboard != null)
                     hashCode = hashCode * 59 + ConsumerSuppressOnDashboard.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsNotifications left, ApiuiSettingsSettingsNotifications right)
         {
@@ -163,7 +163,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

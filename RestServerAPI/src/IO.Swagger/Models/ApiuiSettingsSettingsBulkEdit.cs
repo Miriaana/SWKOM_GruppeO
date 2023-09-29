@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsBulkEdit : IEquatable<ApiuiSettingsSettingsBulkEdit>
-    { 
+    {
         /// <summary>
         /// Gets or Sets ApplyOnClose
         /// </summary>
         [Required]
 
-        [DataMember(Name="apply_on_close")]
+        [DataMember(Name = "apply_on_close")]
         public bool? ApplyOnClose { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="confirmation_dialogs")]
+        [DataMember(Name = "confirmation_dialogs")]
         public bool? ConfirmationDialogs { get; set; }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     ApplyOnClose == other.ApplyOnClose ||
                     ApplyOnClose != null &&
                     ApplyOnClose.Equals(other.ApplyOnClose)
-                ) && 
+                ) &&
                 (
                     ConfirmationDialogs == other.ConfirmationDialogs ||
                     ConfirmationDialogs != null &&
@@ -110,16 +110,16 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (ApplyOnClose != null)
+                if (ApplyOnClose != null)
                     hashCode = hashCode * 59 + ApplyOnClose.GetHashCode();
-                    if (ConfirmationDialogs != null)
+                if (ConfirmationDialogs != null)
                     hashCode = hashCode * 59 + ConfirmationDialogs.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsBulkEdit left, ApiuiSettingsSettingsBulkEdit right)
         {
@@ -131,7 +131,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

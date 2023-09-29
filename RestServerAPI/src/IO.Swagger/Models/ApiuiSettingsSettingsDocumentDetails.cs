@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class ApiuiSettingsSettingsDocumentDetails : IEquatable<ApiuiSettingsSettingsDocumentDetails>
-    { 
+    {
         /// <summary>
         /// Gets or Sets NativePdfViewer
         /// </summary>
         [Required]
 
-        [DataMember(Name="native_pdf_viewer")]
+        [DataMember(Name = "native_pdf_viewer")]
         public bool? NativePdfViewer { get; set; }
 
         /// <summary>
@@ -78,12 +78,12 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
+            return
+
                     NativePdfViewer == other.NativePdfViewer ||
                     NativePdfViewer != null &&
                     NativePdfViewer.Equals(other.NativePdfViewer)
-                );
+                ;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (NativePdfViewer != null)
+                if (NativePdfViewer != null)
                     hashCode = hashCode * 59 + NativePdfViewer.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(ApiuiSettingsSettingsDocumentDetails left, ApiuiSettingsSettingsDocumentDetails right)
         {
@@ -115,7 +115,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class TagsIdBody : IEquatable<TagsIdBody>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [Required]
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public int? Id { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="slug")]
+        [DataMember(Name = "slug")]
         public string Slug { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="color")]
+        [DataMember(Name = "color")]
         public string Color { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="text_color")]
+        [DataMember(Name = "text_color")]
         public string TextColor { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="match")]
+        [DataMember(Name = "match")]
         public string Match { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="matching_algorithm")]
+        [DataMember(Name = "matching_algorithm")]
         public int? MatchingAlgorithm { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_insensitive")]
+        [DataMember(Name = "is_insensitive")]
         public bool? IsInsensitive { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="is_inbox_tag")]
+        [DataMember(Name = "is_inbox_tag")]
         public bool? IsInboxTag { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="document_count")]
+        [DataMember(Name = "document_count")]
         public int? DocumentCount { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="owner")]
+        [DataMember(Name = "owner")]
         public int? Owner { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions")]
+        [DataMember(Name = "permissions")]
         public ApicorrespondentsidPermissions Permissions { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="set_permissions")]
+        [DataMember(Name = "set_permissions")]
         public ApicorrespondentsidPermissions SetPermissions { get; set; }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="permissions_form")]
+        [DataMember(Name = "permissions_form")]
         public ApicorrespondentsidPermissionsForm PermissionsForm { get; set; }
 
         /// <summary>
@@ -195,72 +195,72 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Slug == other.Slug ||
                     Slug != null &&
                     Slug.Equals(other.Slug)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Color == other.Color ||
                     Color != null &&
                     Color.Equals(other.Color)
-                ) && 
+                ) &&
                 (
                     TextColor == other.TextColor ||
                     TextColor != null &&
                     TextColor.Equals(other.TextColor)
-                ) && 
+                ) &&
                 (
                     Match == other.Match ||
                     Match != null &&
                     Match.Equals(other.Match)
-                ) && 
+                ) &&
                 (
                     MatchingAlgorithm == other.MatchingAlgorithm ||
                     MatchingAlgorithm != null &&
                     MatchingAlgorithm.Equals(other.MatchingAlgorithm)
-                ) && 
+                ) &&
                 (
                     IsInsensitive == other.IsInsensitive ||
                     IsInsensitive != null &&
                     IsInsensitive.Equals(other.IsInsensitive)
-                ) && 
+                ) &&
                 (
                     IsInboxTag == other.IsInboxTag ||
                     IsInboxTag != null &&
                     IsInboxTag.Equals(other.IsInboxTag)
-                ) && 
+                ) &&
                 (
                     DocumentCount == other.DocumentCount ||
                     DocumentCount != null &&
                     DocumentCount.Equals(other.DocumentCount)
-                ) && 
+                ) &&
                 (
                     Owner == other.Owner ||
                     Owner != null &&
                     Owner.Equals(other.Owner)
-                ) && 
+                ) &&
                 (
                     Permissions == other.Permissions ||
                     Permissions != null &&
                     Permissions.Equals(other.Permissions)
-                ) && 
+                ) &&
                 (
                     SetPermissions == other.SetPermissions ||
                     SetPermissions != null &&
                     SetPermissions.Equals(other.SetPermissions)
-                ) && 
+                ) &&
                 (
                     PermissionsForm == other.PermissionsForm ||
                     PermissionsForm != null &&
@@ -278,40 +278,40 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Slug != null)
+                if (Slug != null)
                     hashCode = hashCode * 59 + Slug.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Color != null)
+                if (Color != null)
                     hashCode = hashCode * 59 + Color.GetHashCode();
-                    if (TextColor != null)
+                if (TextColor != null)
                     hashCode = hashCode * 59 + TextColor.GetHashCode();
-                    if (Match != null)
+                if (Match != null)
                     hashCode = hashCode * 59 + Match.GetHashCode();
-                    if (MatchingAlgorithm != null)
+                if (MatchingAlgorithm != null)
                     hashCode = hashCode * 59 + MatchingAlgorithm.GetHashCode();
-                    if (IsInsensitive != null)
+                if (IsInsensitive != null)
                     hashCode = hashCode * 59 + IsInsensitive.GetHashCode();
-                    if (IsInboxTag != null)
+                if (IsInboxTag != null)
                     hashCode = hashCode * 59 + IsInboxTag.GetHashCode();
-                    if (DocumentCount != null)
+                if (DocumentCount != null)
                     hashCode = hashCode * 59 + DocumentCount.GetHashCode();
-                    if (Owner != null)
+                if (Owner != null)
                     hashCode = hashCode * 59 + Owner.GetHashCode();
-                    if (Permissions != null)
+                if (Permissions != null)
                     hashCode = hashCode * 59 + Permissions.GetHashCode();
-                    if (SetPermissions != null)
+                if (SetPermissions != null)
                     hashCode = hashCode * 59 + SetPermissions.GetHashCode();
-                    if (PermissionsForm != null)
+                if (PermissionsForm != null)
                     hashCode = hashCode * 59 + PermissionsForm.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(TagsIdBody left, TagsIdBody right)
         {
@@ -323,7 +323,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

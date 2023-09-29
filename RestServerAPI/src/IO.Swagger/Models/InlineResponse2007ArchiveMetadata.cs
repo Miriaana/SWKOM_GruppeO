@@ -18,20 +18,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse2007ArchiveMetadata : IEquatable<InlineResponse2007ArchiveMetadata>
-    { 
+    {
         /// <summary>
         /// Gets or Sets _Namespace
         /// </summary>
         [Required]
 
-        [DataMember(Name="namespace")]
+        [DataMember(Name = "namespace")]
         public string _Namespace { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="prefix")]
+        [DataMember(Name = "prefix")]
         public string Prefix { get; set; }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="key")]
+        [DataMember(Name = "key")]
         public string Key { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Models
         /// </summary>
         [Required]
 
-        [DataMember(Name="value")]
+        [DataMember(Name = "value")]
         public string Value { get; set; }
 
         /// <summary>
@@ -105,22 +105,22 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     _Namespace == other._Namespace ||
                     _Namespace != null &&
                     _Namespace.Equals(other._Namespace)
-                ) && 
+                ) &&
                 (
                     Prefix == other.Prefix ||
                     Prefix != null &&
                     Prefix.Equals(other.Prefix)
-                ) && 
+                ) &&
                 (
                     Key == other.Key ||
                     Key != null &&
                     Key.Equals(other.Key)
-                ) && 
+                ) &&
                 (
                     Value == other.Value ||
                     Value != null &&
@@ -138,20 +138,20 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (_Namespace != null)
+                if (_Namespace != null)
                     hashCode = hashCode * 59 + _Namespace.GetHashCode();
-                    if (Prefix != null)
+                if (Prefix != null)
                     hashCode = hashCode * 59 + Prefix.GetHashCode();
-                    if (Key != null)
+                if (Key != null)
                     hashCode = hashCode * 59 + Key.GetHashCode();
-                    if (Value != null)
+                if (Value != null)
                     hashCode = hashCode * 59 + Value.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse2007ArchiveMetadata left, InlineResponse2007ArchiveMetadata right)
         {
@@ -163,7 +163,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }

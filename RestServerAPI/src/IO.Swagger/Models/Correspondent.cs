@@ -18,68 +18,68 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Models
+namespace PaperlessRestApi.Models
 {
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Correspondent : IEquatable<Correspondent>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public long? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Slug
         /// </summary>
 
-        [DataMember(Name="slug")]
+        [DataMember(Name = "slug")]
         public string Slug { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Match
         /// </summary>
 
-        [DataMember(Name="match")]
+        [DataMember(Name = "match")]
         public string Match { get; set; }
 
         /// <summary>
         /// Gets or Sets MatchingAlgorithm
         /// </summary>
 
-        [DataMember(Name="matching_algorithm")]
+        [DataMember(Name = "matching_algorithm")]
         public long? MatchingAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or Sets IsInsensitive
         /// </summary>
 
-        [DataMember(Name="is_insensitive")]
+        [DataMember(Name = "is_insensitive")]
         public bool? IsInsensitive { get; set; }
 
         /// <summary>
         /// Gets or Sets DocumentCount
         /// </summary>
 
-        [DataMember(Name="document_count")]
+        [DataMember(Name = "document_count")]
         public long? DocumentCount { get; set; }
 
         /// <summary>
         /// Gets or Sets LastCorrespondence
         /// </summary>
 
-        [DataMember(Name="last_correspondence")]
+        [DataMember(Name = "last_correspondence")]
         public DateTime? LastCorrespondence { get; set; }
 
         /// <summary>
@@ -133,42 +133,42 @@ namespace IO.Swagger.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Slug == other.Slug ||
                     Slug != null &&
                     Slug.Equals(other.Slug)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Match == other.Match ||
                     Match != null &&
                     Match.Equals(other.Match)
-                ) && 
+                ) &&
                 (
                     MatchingAlgorithm == other.MatchingAlgorithm ||
                     MatchingAlgorithm != null &&
                     MatchingAlgorithm.Equals(other.MatchingAlgorithm)
-                ) && 
+                ) &&
                 (
                     IsInsensitive == other.IsInsensitive ||
                     IsInsensitive != null &&
                     IsInsensitive.Equals(other.IsInsensitive)
-                ) && 
+                ) &&
                 (
                     DocumentCount == other.DocumentCount ||
                     DocumentCount != null &&
                     DocumentCount.Equals(other.DocumentCount)
-                ) && 
+                ) &&
                 (
                     LastCorrespondence == other.LastCorrespondence ||
                     LastCorrespondence != null &&
@@ -186,28 +186,28 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Slug != null)
+                if (Slug != null)
                     hashCode = hashCode * 59 + Slug.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Match != null)
+                if (Match != null)
                     hashCode = hashCode * 59 + Match.GetHashCode();
-                    if (MatchingAlgorithm != null)
+                if (MatchingAlgorithm != null)
                     hashCode = hashCode * 59 + MatchingAlgorithm.GetHashCode();
-                    if (IsInsensitive != null)
+                if (IsInsensitive != null)
                     hashCode = hashCode * 59 + IsInsensitive.GetHashCode();
-                    if (DocumentCount != null)
+                if (DocumentCount != null)
                     hashCode = hashCode * 59 + DocumentCount.GetHashCode();
-                    if (LastCorrespondence != null)
+                if (LastCorrespondence != null)
                     hashCode = hashCode * 59 + LastCorrespondence.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+#pragma warning disable 1591
 
         public static bool operator ==(Correspondent left, Correspondent right)
         {
@@ -219,7 +219,7 @@ namespace IO.Swagger.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
         #endregion Operators
     }
 }
