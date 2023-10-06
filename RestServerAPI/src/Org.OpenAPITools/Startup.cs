@@ -73,9 +73,10 @@ namespace PaperlessRestAPI
                 options.AddDefaultPolicy(
                     policy =>
                     {
-                        policy.WithOrigins("http://localhost:4200/")
+                       /*policy.WithOrigins("http://localhost:4200/")
                                 .AllowAnyHeader()
-                                .AllowAnyMethod();
+                                .AllowAnyMethod();*/
+                        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                     });
             });
             services

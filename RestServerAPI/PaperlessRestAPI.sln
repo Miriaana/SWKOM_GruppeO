@@ -5,6 +5,14 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI", "src\Org.OpenAPITools\PaperlessRestAPI.csproj", "{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.BusinessLogic.Entities", "PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj", "{325FF4C8-76CE-4DB9-B816-2772B04C492F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.BusinessLogic.Interfaces", "PaperlessRestAPI.BusinessLogic.Interfaces\PaperlessRestAPI.BusinessLogic.Interfaces.csproj", "{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.BusinessLogic", "PaperlessRestAPI.BusinessLogic\PaperlessRestAPI.BusinessLogic.csproj", "{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.BusinessLogic.Tests", "PaperlessRestAPI.BusinessLogic.Tests\PaperlessRestAPI.BusinessLogic.Tests.csproj", "{8FA18F0C-1707-495B-9050-A63A7903E606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

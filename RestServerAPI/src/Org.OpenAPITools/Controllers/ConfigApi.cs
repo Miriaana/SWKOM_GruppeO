@@ -86,7 +86,7 @@ namespace PaperlessRestAPI.Controllers
         [SwaggerResponse(statusCode: 200, type: typeof(CreateUISettings200Response), description: "Success")]
         public virtual IActionResult CreateUISettings([FromBody] CreateUISettingsRequest createUISettingsRequest)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+           // Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(CreateUISettings200Response));
             string exampleJson = null;
@@ -247,7 +247,7 @@ namespace PaperlessRestAPI.Controllers
         public virtual IActionResult GetUISettings()
         {
 
-            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+            //Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             //return StatusCode(200, default(GetUISettings200Response));
             string exampleJson = null;
