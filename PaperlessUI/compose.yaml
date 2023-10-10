@@ -1,0 +1,6 @@
+version: '1.0'
+services: 
+  paperlessui:
+    image: paperlessui
+    ports:
+      - 4200:4200

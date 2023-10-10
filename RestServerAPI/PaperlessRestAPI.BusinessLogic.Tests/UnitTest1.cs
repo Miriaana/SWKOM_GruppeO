@@ -1,6 +1,6 @@
 ﻿namespace PaperlessRestAPI.BusinessLogic.Tests
 {
-    public class Class1
+    public class UnitTest1
     {
 
     }
