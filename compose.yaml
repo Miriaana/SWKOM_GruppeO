@@ -1,0 +1,20 @@
+version: '1.0'
+services: 
+  paperlessui:
+    image: if20b113/paperlessui
+    ports:
+      - 4200:4200 
+
+  db:
+    image: docker.io/library/postgres:15
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+    ports:
+      - 5432:5432
+volumes:
+  pgdata:
