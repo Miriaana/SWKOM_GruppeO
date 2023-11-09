@@ -19,6 +19,9 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using PaperlessRestAPI.Models;
 using PaperlessRestAPI.Attributes;
+using PaperlessRestAPI.RabbitMQ;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -250,6 +253,16 @@ namespace PaperlessRestAPI.Controllers
             //Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             //return StatusCode(200, default(GetUISettings200Response));
+
+            //var RabbitMQTest = new QueueOptions();
+       
+
+            RabbitMQHandler RabbitMQ = new RabbitMQHandler();
+
+            RabbitMQ.send("test",Guid.NewGuid());
+
+            //RabbitMQ.RabbitMQProducer.Send("Test",Guid.NewGuid());
+
             string exampleJson = null;
             exampleJson = "{\n  \"settings\" : {\n    \"update_checking\" : {\n      \"backend_setting\" : \"backend_setting\"\n    }\n  },\n  \"permissions\" : [ \"permissions\", \"permissions\" ],\n  \"display_name\" : \"display_name\",\n  \"user\" : {\n    \"is_superuser\" : true,\n    \"groups\" : [ \"\", \"\" ],\n    \"id\" : 0,\n    \"username\" : \"username\"\n  }\n}";
 
