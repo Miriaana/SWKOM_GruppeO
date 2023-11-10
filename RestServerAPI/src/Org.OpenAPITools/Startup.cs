@@ -17,9 +17,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
 using PaperlessRestAPI.OpenApi;
@@ -111,6 +113,8 @@ namespace PaperlessRestAPI
                 });
             services
                 .AddSwaggerGenNewtonsoftSupport();
+
+            RegisterDAL(services);
         }
 
         /// <summary>
@@ -152,6 +156,26 @@ namespace PaperlessRestAPI
                 {
                     endpoints.MapControllers();
                 });
+        }
+
+        private void RegisterDAL(IServiceCollection services)
+        {
+            services.AddSingleton<IDbConnectionStringContainer>(new DbConnectionStringContainer(Configuration["DB_ConnectionString"]));
+
+            //services.AddSingleton<AutoMigrateService>();
+            services.AddSingleton<PaperlessDbContextFactory>();
+
+            /*
+            var rabbitmq = new RabbitmqQueueOCRJob(new OptionsWrapper<RabbitmqQueueOptions>(new RabbitmqQueueOptions(
+                ConnectionString: Configuration["RABBITMQ_ConnectionString"],
+                QueueName: Configuration["RABBITMQ_QueueName"])));
+            services.AddSingleton<RabbitmqQueueOCRJob>(rabbitmq);
+            */
+            //UploadDocumentLogic udl = new UploadDocumentLogic(services.BuildServiceProvider());
+            //Document d = new Document();
+            //d.Title = "test124";
+            //udl.UploadDocument(d);
+
         }
     }
 }

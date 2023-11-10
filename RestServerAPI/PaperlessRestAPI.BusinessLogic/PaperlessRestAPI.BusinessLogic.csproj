@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj" />
     <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic.Interfaces\PaperlessRestAPI.BusinessLogic.Interfaces.csproj" />
   </ItemGroup>
 

@@ -22,6 +22,8 @@ using PaperlessRestAPI.Attributes;
 using PaperlessRestAPI.RabbitMQ;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PaperlessRestAPI.DataAccess.Sql;
+using Microsoft.Extensions.Configuration;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -132,9 +134,12 @@ namespace PaperlessRestAPI.Controllers
         {
 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
 
-            throw new NotImplementedException();
+            DataHandlerEF db = new DataHandlerEF();
+
+            return StatusCode(200);
+
+            //throw new NotImplementedException();
         }
 
         /// <summary>

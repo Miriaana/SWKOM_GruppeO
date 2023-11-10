@@ -22,4 +22,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj" />
+    <ProjectReference Include="..\..\PaperlessRestAPI.BusinessLogic.Interfaces\PaperlessRestAPI.BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Entities\PaperlessRestAPI.DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Interfaces\PaperlessRestAPI.DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Sql\PaperlessRestAPI.DataAccess.Sql.csproj" />
+  </ItemGroup>
 </Project>

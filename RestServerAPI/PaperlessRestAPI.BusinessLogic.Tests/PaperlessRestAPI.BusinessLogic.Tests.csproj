@@ -10,4 +10,10 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj" />
+    <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic.Interfaces\PaperlessRestAPI.BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic\PaperlessRestAPI.BusinessLogic.csproj" />
+  </ItemGroup>
+
 </Project>
