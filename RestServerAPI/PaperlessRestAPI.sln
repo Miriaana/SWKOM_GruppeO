@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI", "src\Org.OpenAPITools\PaperlessRestAPI.csproj", "{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.BusinessLogic.Entities", "PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj", "{325FF4C8-76CE-4DB9-B816-2772B04C492F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.BusinessLogic.Interfaces", "PaperlessRestAPI.BusinessLogic.Interfaces\PaperlessRestAPI.BusinessLogic.Interfaces.csproj", "{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.BusinessLogic", "PaperlessRestAPI.BusinessLogic\PaperlessRestAPI.BusinessLogic.csproj", "{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.BusinessLogic.Tests", "PaperlessRestAPI.BusinessLogic.Tests\PaperlessRestAPI.BusinessLogic.Tests.csproj", "{8FA18F0C-1707-495B-9050-A63A7903E606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.DataAccess.Sql", "PaperlessRestAPI.DataAccess.Sql\PaperlessRestAPI.DataAccess.Sql.csproj", "{63875D8A-C0DC-4DB4-9DA2-D6E55283ACE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.DataAccess.Interfaces", "PaperlessRestAPI.DataAccess.Interfaces\PaperlessRestAPI.DataAccess.Interfaces.csproj", "{1B630B6A-8A9D-44B2-8563-0BE556318D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.DataAccess.Entities", "PaperlessRestAPI.DataAccess.Entities\PaperlessRestAPI.DataAccess.Entities.csproj", "{621E9C83-E26D-4E88-B164-9045945B16D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.DataAccess.Tests", "PaperlessRestAPI.DataAccess.Tests\PaperlessRestAPI.DataAccess.Tests.csproj", "{C2486091-226B-418B-8BF3-DC5570056141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325FF4C8-76CE-4DB9-B816-2772B04C492F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60B842E-F6D9-46B5-B6F9-6C6F01739B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F90DAC-2D78-43EA-A27B-F8BB75E3EC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA18F0C-1707-495B-9050-A63A7903E606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63875D8A-C0DC-4DB4-9DA2-D6E55283ACE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63875D8A-C0DC-4DB4-9DA2-D6E55283ACE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63875D8A-C0DC-4DB4-9DA2-D6E55283ACE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63875D8A-C0DC-4DB4-9DA2-D6E55283ACE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B630B6A-8A9D-44B2-8563-0BE556318D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B630B6A-8A9D-44B2-8563-0BE556318D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B630B6A-8A9D-44B2-8563-0BE556318D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B630B6A-8A9D-44B2-8563-0BE556318D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621E9C83-E26D-4E88-B164-9045945B16D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621E9C83-E26D-4E88-B164-9045945B16D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621E9C83-E26D-4E88-B164-9045945B16D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621E9C83-E26D-4E88-B164-9045945B16D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2486091-226B-418B-8BF3-DC5570056141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2486091-226B-418B-8BF3-DC5570056141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2486091-226B-418B-8BF3-DC5570056141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2486091-226B-418B-8BF3-DC5570056141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13F72DC4-7EF3-4BB5-9D7E-A96AF60B6233}
+	EndGlobalSection
+EndGlobal
