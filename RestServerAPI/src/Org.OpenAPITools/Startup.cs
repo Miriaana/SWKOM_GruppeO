@@ -21,6 +21,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using PaperlessRestAPI.BusinessLogic;
+using PaperlessRestAPI.BusinessLogic.Interfaces;
+using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
 using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
@@ -156,6 +159,16 @@ namespace PaperlessRestAPI
                 {
                     endpoints.MapControllers();
                 });
+        }
+
+        private void RegisterBL(IServiceCollection services)
+        {
+            services.AddSingleton<IDocumentCRUDLogic, DocumentCRUDLogic>();
+            services.AddSingleton<IElasticSearchAccessLogic, ElasticSearchAccessLogic>();
+            services.AddSingleton<ISearchDocumentLogic, SearchDocumentLogic>();
+            services.AddSingleton<ITextRecognitionLogic, TextRecognitionLogic>();
+            services.AddSingleton<ITextRecognitionLogic, TextRecognitionLogic>();
+            // services.AddTransient<ITextRecognitionLogic, TextRecognitionLogic>();
         }
 
         private void RegisterDAL(IServiceCollection services)

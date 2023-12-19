@@ -8,5 +8,8 @@ namespace PaperlessRestAPI.BusinessLogic.Interfaces.Components
 {
     public interface IDocumentCRUDLogic
     {
+        public void CreateDocument();
+        public void DeleteDocument();
+        public void UpdateDocument();
     }
 }
