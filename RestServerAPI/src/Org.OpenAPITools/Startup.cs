@@ -27,6 +27,7 @@ using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
 using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
+using PaperlessRestAPI.logging;
 using PaperlessRestAPI.OpenApi;
 
 namespace PaperlessRestAPI
@@ -118,6 +119,7 @@ namespace PaperlessRestAPI
                 .AddSwaggerGenNewtonsoftSupport();
 
             RegisterDAL(services);
+            services.AddSingleton<ILoggerWrapper>(LoggerFactory.GetLogger());
         }
 
         /// <summary>

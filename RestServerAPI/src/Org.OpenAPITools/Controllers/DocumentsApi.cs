@@ -19,6 +19,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using PaperlessRestAPI.Models;
 using PaperlessRestAPI.Attributes;
+using PaperlessRestAPI.logging;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -28,6 +29,7 @@ namespace PaperlessRestAPI.Controllers
     [ApiController]
     public class DocumentsApiController : ControllerBase
     {
+
         /// <summary>
         /// 
         /// </summary>
@@ -321,6 +323,8 @@ namespace PaperlessRestAPI.Controllers
 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
+            ILoggerWrapper logger = LoggerFactory.GetLogger();
+            logger.Warn("Trying to upload Document");
 
             throw new NotImplementedException();
         }
