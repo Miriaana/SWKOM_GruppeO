@@ -30,5 +30,6 @@
     <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Entities\PaperlessRestAPI.DataAccess.Entities.csproj" />
     <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Interfaces\PaperlessRestAPI.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\..\PaperlessRestAPI.DataAccess.Sql\PaperlessRestAPI.DataAccess.Sql.csproj" />
+    <ProjectReference Include="..\..\TourPlanner_4_SWENII.Utils\PaperlessRestAPI.Utils.csproj" />
   </ItemGroup>
 </Project>

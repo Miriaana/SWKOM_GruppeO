@@ -27,6 +27,7 @@ using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
 using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
+using PaperlessRestAPI.logging;
 using PaperlessRestAPI.OpenApi;
 using PaperlessRestAPI.RabbitMQ;
 
@@ -118,6 +119,7 @@ namespace PaperlessRestAPI
 
             RegisterDAL(services);
             RegisterBL(services);
+            services.AddSingleton<ILoggerWrapper>(LoggerFactory.GetLogger());
         }
 
         /// <summary>

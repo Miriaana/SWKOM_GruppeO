@@ -25,6 +25,7 @@ using System.IO;
 using PaperlessRestAPI.BusinessLogic.Entities;
 using PaperlessRestAPI.RabbitMQ;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
+using PaperlessRestAPI.logging;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -34,6 +35,7 @@ namespace PaperlessRestAPI.Controllers
     [ApiController]
     public class DocumentsApiController : ControllerBase
     {
+
         /// <summary>
         /// 
         /// </summary>
@@ -330,6 +332,10 @@ namespace PaperlessRestAPI.Controllers
             {
                 return StatusCode(400, "No file was uploaded.");
             }
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+            ILoggerWrapper logger = LoggerFactory.GetLogger();
+            logger.Warn("Trying to upload Document");
 
             foreach ( var item in document )
             {
