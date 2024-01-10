@@ -262,9 +262,9 @@ namespace PaperlessRestAPI.Controllers
             //var RabbitMQTest = new QueueOptions();
        
 
-            RabbitMQHandler RabbitMQ = new RabbitMQHandler();
+            //RabbitMQHandler RabbitMQ = new RabbitMQHandler();
 
-            RabbitMQ.send("test",Guid.NewGuid());
+            //RabbitMQ.send("test",Guid.NewGuid());
 
             //RabbitMQ.RabbitMQProducer.Send("Test",Guid.NewGuid());
 

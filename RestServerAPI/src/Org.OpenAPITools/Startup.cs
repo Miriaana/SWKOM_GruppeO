@@ -28,6 +28,7 @@ using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
 using PaperlessRestAPI.OpenApi;
+using PaperlessRestAPI.RabbitMQ;
 
 namespace PaperlessRestAPI
 {
@@ -36,6 +37,8 @@ namespace PaperlessRestAPI
     /// </summary>
     public class Startup
     {
+        private IConfiguration Configuration { get; }
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -48,7 +51,6 @@ namespace PaperlessRestAPI
         /// <summary>
         /// The application configuration.
         /// </summary>
-        public IConfiguration Configuration { get; }
 
         /// <summary>
         /// This method gets called by the runtime. Use this method to add services to the container.
@@ -78,9 +80,6 @@ namespace PaperlessRestAPI
                 options.AddDefaultPolicy(
                     policy =>
                     {
-                       /*policy.WithOrigins("http://localhost:4200/")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();*/
                         policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                     });
             });
@@ -118,6 +117,7 @@ namespace PaperlessRestAPI
                 .AddSwaggerGenNewtonsoftSupport();
 
             RegisterDAL(services);
+            RegisterBL(services);
         }
 
         /// <summary>
@@ -177,6 +177,30 @@ namespace PaperlessRestAPI
 
             //services.AddSingleton<AutoMigrateService>();
             services.AddSingleton<PaperlessDbContextFactory>();
+            services.AddSingleton<RabbitMQHandler>(sp =>
+            {
+                var config = sp.GetRequiredService<IConfiguration>();
+                var rabbitMQOptions = config.GetSection("RabbitMQ").Get<RabbitMQOptions>();
+                return new RabbitMQHandler(
+                    rabbitMQOptions.Hostname,
+                    rabbitMQOptions.Username,
+                    rabbitMQOptions.Password,
+                    rabbitMQOptions.Port,
+                    rabbitMQOptions.queueName
+                );
+            });
+
+            services.AddSingleton<IFileStorage, MinioFileStorage>(sp =>
+            {
+                var config = sp.GetRequiredService<IConfiguration>();
+                var minioOptions = config.GetSection("MinIO").Get<MinIOOptions>();
+                return new MinioFileStorage(
+                    minioOptions.Endpoint,
+                    minioOptions.AccessKey,
+                    minioOptions.SecretKey,
+                    minioOptions.BucketName
+                    );
+            });
 
             /*
             var rabbitmq = new RabbitmqQueueOCRJob(new OptionsWrapper<RabbitmqQueueOptions>(new RabbitmqQueueOptions(
@@ -188,6 +212,8 @@ namespace PaperlessRestAPI
             //Document d = new Document();
             //d.Title = "test124";
             //udl.UploadDocument(d);
+
+
 
         }
     }

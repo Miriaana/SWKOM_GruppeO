@@ -19,6 +19,12 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using PaperlessRestAPI.Models;
 using PaperlessRestAPI.Attributes;
+using PaperlessRestAPI.BusinessLogic;
+using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
+using System.IO;
+using PaperlessRestAPI.BusinessLogic.Entities;
+using PaperlessRestAPI.RabbitMQ;
+using PaperlessRestAPI.BusinessLogic.Interfaces;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -316,13 +322,56 @@ namespace PaperlessRestAPI.Controllers
         [Consumes("multipart/form-data")]
         [ValidateModelState]
         [SwaggerOperation("UploadDocument")]
-        public virtual IActionResult UploadDocument([FromForm(Name = "title")] string title, [FromForm(Name = "created")] DateTime? created, [FromForm(Name = "document_type")] int? documentType, [FromForm(Name = "tags")] List<int> tags, [FromForm(Name = "correspondent")] int? correspondent, [FromForm(Name = "document")] List<System.IO.Stream> document)
+        public virtual IActionResult UploadDocument([FromForm(Name = "title")] string title, [FromForm(Name = "created")] DateTime? created, [FromForm(Name = "document_type")] int? documentType, [FromForm(Name = "tags")] List<int> tags, [FromForm(Name = "correspondent")] int? correspondent, [FromForm(Name = "document")] List<IFormFile> document ,[FromServices] IDocumentCRUDLogic DocumentCRUDLogic)
         {
 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
+            // check if file(s) were uploaded
+            if (document == null || document.Count == 0)
+            {
+                return StatusCode(400, "No file was uploaded.");
+            }
 
-            throw new NotImplementedException();
+            foreach ( var item in document )
+            {
+                if(item.Length == 0)
+                {
+                    return StatusCode(400, "File is empty.");
+                }
+                DocumentRepo doc = new DocumentRepo()
+                {
+                    Id = Guid.NewGuid(),
+                    Title = item.FileName.Substring(0, item.FileName.Length - 4),
+                    Original_File_Name = item.FileName,
+                    Created_Date = DateTime.Now.ToUniversalTime(),
+
+                    OwnerId = null,
+                    DocumentTypeId = null,
+                    CorrespondentId = null,
+
+                    Content = string.Empty,
+                    User_Can_Change = true,
+
+                    Created = (DateTime)created,
+                    Modified = DateTime.Now.ToUniversalTime(),
+                    Added = DateTime.Now.ToUniversalTime()
+                };
+
+                using (MemoryStream ms = new())
+                {
+                    item.CopyTo(ms);
+
+                    doc.Data = ms.ToArray();
+                }
+
+                DocumentCRUDLogic.CreateDocument(doc);
+
+                //Console.WriteLine(RabbitMQ.queueName);
+
+           
+               //  Minio.DeleteFileAsync(doc.Original_File_Name);
+            }
+
+            return StatusCode(200);
         }
     }
 }

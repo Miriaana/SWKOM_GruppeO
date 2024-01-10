@@ -16,11 +16,8 @@ namespace PaperlessRestAPI.DataAccess.Entities
         public string Match { get; set; }
         public int MatchingAlgorithm { get; set; }
         public bool IsInsensitive { get; set; }
-
-        // Foreign Key to What
         public int Owner { get; set; }
 
-        // Foreign Key to LastCorrespondents
         public int LastCorrespondentsId { get; set; }
         public Correspondents LastCorrespondents { get; set; }
     }

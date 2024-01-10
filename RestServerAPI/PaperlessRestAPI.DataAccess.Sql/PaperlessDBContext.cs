@@ -106,8 +106,6 @@ namespace PaperlessRestAPI.DataAccess.Sql
         {
             modelBuilder.Entity<PermissionName>()
                 .HasKey(p => p.Name);
-
-            // foreign key to Groups is set in ConfigurePermissionGroupMapping
         }
 
         private void ConfigurePermissionGroupMapping(ModelBuilder modelBuilder)
@@ -130,9 +128,6 @@ namespace PaperlessRestAPI.DataAccess.Sql
         {
             modelBuilder.Entity<Group>()
                 .HasKey(g => g.Id);
-
-            // foreign key to PermissionNames is set in ConfigurePermissionNames
-            // foreign key to users is set in ConfigureGroupUserMapping
         }
 
         private void ConfigureGroupUserMapping(ModelBuilder modelBuilder)
@@ -155,14 +150,7 @@ namespace PaperlessRestAPI.DataAccess.Sql
         {
             modelBuilder.Entity<User>()
                 .HasKey(u => u.Id);
-
-            // foreign key to Groups is set in ConfigureGroupUserMapping
         }
-
-        //private void ConfigurePermission(ModelBuilder modelBuilder)
-        //{
-        //    // ToDo David
-        //}
 
         private void ConfigureNotes(ModelBuilder modelBuilder)
         {
