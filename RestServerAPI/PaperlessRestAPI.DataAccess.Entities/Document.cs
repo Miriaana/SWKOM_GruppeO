@@ -36,7 +36,7 @@ namespace PaperlessRestAPI.DataAccess.Entities
 
 
         public int CorrespondentId { get; set; }
-        public Correspondents? Correspondent { get; set; } //Correspondent as Object?
+        public Correspondents? Correspondent { get; set; }
 
         public int DocumentTypeId { get; set; }
         public DocumentType? Document_Type { get; set; }

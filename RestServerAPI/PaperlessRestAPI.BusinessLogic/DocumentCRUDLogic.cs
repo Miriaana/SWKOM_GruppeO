@@ -1,6 +1,7 @@
 ﻿using PaperlessRestAPI.BusinessLogic.Entities;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
 using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
+using PaperlessRestAPI.DataAccess.Interfaces;
 using PaperlessRestAPI.RabbitMQ;
 
 namespace PaperlessRestAPI.BusinessLogic
@@ -8,25 +9,30 @@ namespace PaperlessRestAPI.BusinessLogic
     public class DocumentCRUDLogic : IDocumentCRUDLogic
     {
         IFileStorage _minio;
+        private readonly IDocumentRepository _documentrepository;
         RabbitMQHandler _rabbitmq;
 
 
-        public DocumentCRUDLogic(RabbitMQHandler rabbitmq, IFileStorage minio) {
+        public DocumentCRUDLogic(RabbitMQHandler rabbitmq, IFileStorage minio, IDocumentRepository documentRepository) {
 
             this._rabbitmq = rabbitmq;
             this._minio = minio;
+            this._documentrepository = documentRepository;
         }
 
-        public void CreateDocument(DocumentRepo documentRepo)
+        public async void CreateDocument(Document documentRepo)
         {
-            //throw new NotImplementedException();
+        
+            if(!_minio.FileExistsAsync(documentRepo.Original_File_Name).Result)
+            {
 
-            //Console.WriteLine(documentRepo);
+               await _minio.UploadFileAsync(new MemoryStream(documentRepo.Data), documentRepo.Original_File_Name);
 
-            _minio.UploadFileAsync(new MemoryStream(documentRepo.Data), documentRepo.Original_File_Name);
+                _rabbitmq.send(documentRepo.Original_File_Name, documentRepo.Id);
 
-            _rabbitmq.send(documentRepo.Original_File_Name, documentRepo.Id);
-
+                _documentrepository.CreateDocument(documentRepo);
+            }
+           
         }
 
         public void DeleteDocument()

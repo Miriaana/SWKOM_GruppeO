@@ -1,11 +1,4 @@
 {
-  "Logging": {
-    "LogLevel": {
-      "Default": "Debug",
-      "System": "Information",
-      "Microsoft": "Information"
-    }
-  },
   "MinIO": {
     "Endpoint": "localhost:9000", // Use your MinIO server endpoint here
     "AccessKey": "minio", // Use your MinIO access key here
@@ -18,13 +11,5 @@
     "Username": "rabbitmq", // Use your RabbitMQ username here
     "Password": "rabbitmq", // Use your RabbitMQ password here
     "QueueName": "ocr_paperless"
-  },
-  "DatabaseOptions": {
-    "Host": "localhost",
-    "Port": "5432",
-    "Database": "paperless",
-    "Username": "paperless",
-    "Password": "paperless"
-  },
-  "AllowedHosts": "*"
+  }
 }

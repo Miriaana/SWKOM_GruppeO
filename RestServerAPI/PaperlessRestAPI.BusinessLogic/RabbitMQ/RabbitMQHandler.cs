@@ -1,8 +1,10 @@
 ﻿using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System;
 using System.Text;
 using System.Web;
 using System.Text.Json;
+using System.Threading.Channels;
 
 
 namespace PaperlessRestAPI.RabbitMQ
@@ -12,11 +14,11 @@ namespace PaperlessRestAPI.RabbitMQ
         private readonly IConnection _connection;
         private readonly IModel _channel;
         private readonly ConnectionFactory _factory;
-        public string queueName;
+        private readonly string queueName;
         private bool disposedValue;
 
 
-        public RabbitMQHandler(string hostname, string username, string password, int port = 5672, string? queueName = null)
+        public RabbitMQHandler(string hostname, string username, string password, int port = 5672, string queueName = null)
         {
             _factory = new ConnectionFactory() { HostName = hostname, UserName = username, Password = password, Port = port };
             _connection = _factory.CreateConnection();
@@ -43,7 +45,7 @@ namespace PaperlessRestAPI.RabbitMQ
 
         }
 
-        public void DeleteQueueAsync(string queueName)
+        public void DeleteQueue(string queueName)
         {
             _channel.QueueDelete(queueName);
         }
@@ -90,12 +92,18 @@ namespace PaperlessRestAPI.RabbitMQ
                                  body: System.Text.Encoding.UTF8.GetBytes(body));
         }
 
-        public Task EnqueueAsync<T>( T messageObject)
+        public string receive()
         {
-            var messageBody = JsonSerializer.Serialize(messageObject);
-            var body = Encoding.UTF8.GetBytes(messageBody);
-            _channel.BasicPublish(exchange: string.Empty, routingKey: queueName, basicProperties: null, body: body);
-            return Task.CompletedTask;
+            var result = _channel.BasicGet(queueName, true);
+            if (result == null) return string.Empty;
+
+            var body = result.Body.ToArray();
+            var messageBody = Encoding.UTF8.GetString(body);
+            // var messageObject = JsonSerializer.Deserialize<string>(messageBody);
+
+            // if (messageObject == null) throw new Exception("Failed to deserialize message body.");
+
+            return messageBody;
         }
     }
 }

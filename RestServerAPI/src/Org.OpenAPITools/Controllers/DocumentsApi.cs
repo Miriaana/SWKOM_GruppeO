@@ -26,6 +26,7 @@ using PaperlessRestAPI.BusinessLogic.Entities;
 using PaperlessRestAPI.RabbitMQ;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
 using PaperlessRestAPI.logging;
+using Document = PaperlessRestAPI.BusinessLogic.Entities.Document;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -332,8 +333,6 @@ namespace PaperlessRestAPI.Controllers
             {
                 return StatusCode(400, "No file was uploaded.");
             }
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
             ILoggerWrapper logger = LoggerFactory.GetLogger();
             logger.Warn("Trying to upload Document");
 
@@ -343,7 +342,7 @@ namespace PaperlessRestAPI.Controllers
                 {
                     return StatusCode(400, "File is empty.");
                 }
-                DocumentRepo doc = new DocumentRepo()
+                Document doc = new Document()
                 {
                     Id = Guid.NewGuid(),
                     Title = item.FileName.Substring(0, item.FileName.Length - 4),
@@ -357,7 +356,7 @@ namespace PaperlessRestAPI.Controllers
                     Content = string.Empty,
                     User_Can_Change = true,
 
-                    Created = (DateTime)created,
+                    Created = DateTime.Now.ToUniversalTime(),
                     Modified = DateTime.Now.ToUniversalTime(),
                     Added = DateTime.Now.ToUniversalTime()
                 };

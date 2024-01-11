@@ -24,6 +24,7 @@ using Newtonsoft.Json.Serialization;
 using PaperlessRestAPI.BusinessLogic;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
 using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
+using PaperlessRestAPI.DataAccess.Interfaces;
 using PaperlessRestAPI.DataAccess.Sql;
 using PaperlessRestAPI.Filters;
 using PaperlessRestAPI.Formatters;
@@ -168,17 +169,16 @@ namespace PaperlessRestAPI
             services.AddSingleton<IDocumentCRUDLogic, DocumentCRUDLogic>();
             services.AddSingleton<IElasticSearchAccessLogic, ElasticSearchAccessLogic>();
             services.AddSingleton<ISearchDocumentLogic, SearchDocumentLogic>();
-            services.AddSingleton<ITextRecognitionLogic, TextRecognitionLogic>();
-            services.AddSingleton<ITextRecognitionLogic, TextRecognitionLogic>();
-            // services.AddTransient<ITextRecognitionLogic, TextRecognitionLogic>();
         }
 
         private void RegisterDAL(IServiceCollection services)
         {
-            services.AddSingleton<IDbConnectionStringContainer>(new DbConnectionStringContainer(Configuration["DB_ConnectionString"]));
+            services.Configure<DatabaseOptions>(Configuration.GetSection("DatabaseOptions"));
+            services.AddSingleton<DatabaseOptions>(sp => sp.GetRequiredService<IOptions<DatabaseOptions>>().Value);
+            services.AddSingleton<IDbConnectionStringContainer, DbConnectionStringContainer>();
 
-            //services.AddSingleton<AutoMigrateService>();
             services.AddSingleton<PaperlessDbContextFactory>();
+            services.AddSingleton<IDocumentRepository , DocumentRepository>();
             services.AddSingleton<RabbitMQHandler>(sp =>
             {
                 var config = sp.GetRequiredService<IConfiguration>();
@@ -203,20 +203,6 @@ namespace PaperlessRestAPI
                     minioOptions.BucketName
                     );
             });
-
-            /*
-            var rabbitmq = new RabbitmqQueueOCRJob(new OptionsWrapper<RabbitmqQueueOptions>(new RabbitmqQueueOptions(
-                ConnectionString: Configuration["RABBITMQ_ConnectionString"],
-                QueueName: Configuration["RABBITMQ_QueueName"])));
-            services.AddSingleton<RabbitmqQueueOCRJob>(rabbitmq);
-            */
-            //UploadDocumentLogic udl = new UploadDocumentLogic(services.BuildServiceProvider());
-            //Document d = new Document();
-            //d.Title = "test124";
-            //udl.UploadDocument(d);
-
-
-
         }
     }
 }

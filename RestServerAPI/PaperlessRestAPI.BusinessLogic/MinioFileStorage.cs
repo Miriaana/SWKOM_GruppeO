@@ -37,7 +37,6 @@ namespace PaperlessRestAPI.BusinessLogic
                 .WithStreamData(fileStream)
                 .WithObject(filePath)
                 .WithObjectSize(fileStream.Length);
-
             await _minioClient.PutObjectAsync(putObjectArgs);
         }
 
@@ -58,13 +57,11 @@ namespace PaperlessRestAPI.BusinessLogic
             await _minioClient.RemoveObjectAsync(removeObjectArgs);
         }
 
-        //ToDo: Fix Method (Output -> Error Messages in Extra Header and returns true on failure)
         public async Task<bool> FileExistsAsync(string filePath)
         {
             var statObjectArgs = new StatObjectArgs().WithBucket(_bucketName).WithObject(filePath);
             var result = await _minioClient.StatObjectAsync(statObjectArgs);
-
-            return result != null;
+            return result.Size > 0;
         }
     }
 }
