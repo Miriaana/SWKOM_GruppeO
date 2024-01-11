@@ -8,5 +8,6 @@ namespace PaperlessRestAPI.BusinessLogic.Interfaces.Components
 {
     public interface ISearchDocumentLogic
     {
+        public List<string> searchDocuments(string Searchterm);
     }
 }

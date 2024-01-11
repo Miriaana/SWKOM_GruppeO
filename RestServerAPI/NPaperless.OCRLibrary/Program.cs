@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.Extensions.Configuration;
+using NPaperless.SearchLibrary;
 using PaperlessRestAPI.BusinessLogic;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
 using PaperlessRestAPI.OCRWorker;
@@ -62,7 +63,9 @@ namespace PaperlessRestAPI.OCRWorker
                        queueOptions.queueName
                    ),
                 queueOptions.queueName,
-                   new OcrClient(new OcrOptions())
+                   new OcrClient(new OcrOptions()),
+                   new ElasticSearchIndex(null,null)
+
                );
 
             while (true)

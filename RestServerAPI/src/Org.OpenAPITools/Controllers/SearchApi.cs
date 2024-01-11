@@ -19,6 +19,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using PaperlessRestAPI.Attributes;
 using PaperlessRestAPI.Models;
+using PaperlessRestAPI.BusinessLogic;
+using PaperlessRestAPI.BusinessLogic.Interfaces.Components;
 
 namespace PaperlessRestAPI.Controllers
 {
@@ -39,19 +41,9 @@ namespace PaperlessRestAPI.Controllers
         [ValidateModelState]
         [SwaggerOperation("AutoComplete")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<string>), description: "Success")]
-        public virtual IActionResult AutoComplete([FromQuery(Name = "term")] string term, [FromQuery(Name = "limit")] int? limit)
-        {
-
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(List<string>));
-            string exampleJson = null;
-            exampleJson = "[ \"\", \"\" ]";
-
-            var example = exampleJson != null
-            ? JsonConvert.DeserializeObject<List<string>>(exampleJson)
-            : default;
-            //TODO: Change the data returned
-            return new ObjectResult(example);
+        public virtual IActionResult AutoComplete([FromQuery(Name = "term")] string term, [FromQuery(Name = "limit")] int? limit, [FromServices] ISearchDocumentLogic searchDocument)
+        {        
+            return StatusCode(200, searchDocument.searchDocuments(term));    
         }
     }
 }
