@@ -71,7 +71,33 @@ services:
       /usr/bin/mc alias set minio http://minio:9000 minio minio123 &&
       /usr/bin/mc mb minio/paperless
       "
-
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    container_name: elasticsearch
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    restart: always
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+  kibana:
+    depends_on:
+      - elasticsearch
+    image: docker.elastic.co/kibana/kibana:8.2.3
+    container_name: kibana
+    volumes:
+      - kibana-data:/usr/share/kibana/data
+    ports:
+     - 5601:5601
+    restart: always
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
 networks:
   pgdata:
     driver: bridge
@@ -81,3 +107,7 @@ volumes:
   pgadmin:
   minio_data:
   rabbitmq_data:
+  elasticsearch-data:
+    driver: local
+  kibana-data:
+    driver: local
