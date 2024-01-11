@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI", "src\Org.OpenAPITools\PaperlessRestAPI.csproj", "{F7A9B4A5-955D-4A67-8D7D-ADC087FF32A1}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DD57B8E1-7111-4E38-8C5A-EDA5FE370212} = {DD57B8E1-7111-4E38-8C5A-EDA5FE370212}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.BusinessLogic.Entities", "PaperlessRestAPI.BusinessLogic.Entities\PaperlessRestAPI.BusinessLogic.Entities.csproj", "{325FF4C8-76CE-4DB9-B816-2772B04C492F}"
 EndProject
@@ -27,6 +24,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.OCRWorker", "NPaperless.OCRLibrary\PaperlessRestAPI.OCRWorker.csproj", "{856388F1-688F-4E9F-9FC9-E66D5A034E13}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperlessRestAPI.Utils", "TourPlanner_4_SWENII.Utils\PaperlessRestAPI.Utils.csproj", "{DD57B8E1-7111-4E38-8C5A-EDA5FE370212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperlessRestAPI.ElasticSearch", "PaperlessRestAPI.ElasticSearch\PaperlessRestAPI.ElasticSearch.csproj", "{A9765406-361C-477A-9037-5961A3CC8169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +77,10 @@ Global
 		{DD57B8E1-7111-4E38-8C5A-EDA5FE370212}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD57B8E1-7111-4E38-8C5A-EDA5FE370212}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD57B8E1-7111-4E38-8C5A-EDA5FE370212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9765406-361C-477A-9037-5961A3CC8169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9765406-361C-477A-9037-5961A3CC8169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9765406-361C-477A-9037-5961A3CC8169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9765406-361C-477A-9037-5961A3CC8169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
