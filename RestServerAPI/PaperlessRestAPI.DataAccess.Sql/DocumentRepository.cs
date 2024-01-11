@@ -17,14 +17,20 @@ namespace PaperlessRestAPI.DataAccess.Sql
         {
             this.dbContextFactory = dbContextFactory;
 
-            
+            CreateDatabase();
+        }
+
+        public void CreateDatabase()
+        {
+            using PaperlessDbContext dbContext = dbContextFactory.Create();
+            dbContext.Database.EnsureCreated();
         }
 
         public bool CreateDocument(Document document)
         {
-           using PaperlessDbContext dbContext = dbContextFactory.Create();
 
-            dbContext.Database.EnsureCreated();
+            using PaperlessDbContext dbContext = dbContextFactory.Create();
+
 
             dbContext.Documents.Add(document);
 
