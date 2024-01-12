@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PaperlessRestAPI.BusinessLogic\PaperlessRestAPI.BusinessLogic.csproj" />
     <ProjectReference Include="..\PaperlessRestAPI.ElasticSearch\PaperlessRestAPI.ElasticSearch.csproj" />
+    <ProjectReference Include="..\TourPlanner_4_SWENII.Utils\PaperlessRestAPI.Utils.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="docs\HelloWorld.pdf">

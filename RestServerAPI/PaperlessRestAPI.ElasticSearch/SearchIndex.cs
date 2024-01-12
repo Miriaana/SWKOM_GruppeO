@@ -5,13 +5,14 @@ using Elastic.Clients.Elasticsearch;
 using Elastic.Clients.Elasticsearch.QueryDsl;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using PaperlessRestAPI.logging;
 
 public class ElasticSearchIndex : ISearchIndex
 {
     private readonly Uri _uri;
-    private readonly ILogger<ElasticSearchIndex> _logger;
+    private ILoggerWrapper _logger;
 
-    public ElasticSearchIndex(IConfiguration configuration, ILogger<ElasticSearchIndex> logger)
+    public ElasticSearchIndex(IConfiguration configuration, ILoggerWrapper logger)
     {
         this._uri = new Uri(configuration.GetConnectionString("ElasticSearch") ?? "http://localhost:9200/");
         this._logger = logger;
@@ -28,7 +29,7 @@ public class ElasticSearchIndex : ISearchIndex
         if (!indexResponse.IsSuccess())
         {
             // Handle errors
-            _logger.LogError($"Failed to index document: {indexResponse.DebugInformation}\n{indexResponse.ElasticsearchServerError}");
+            _logger.Error($"Failed to index document: {indexResponse.DebugInformation}\n{indexResponse.ElasticsearchServerError}");
 
             throw new Exception($"Failed to index document: {indexResponse.DebugInformation}\n{indexResponse.ElasticsearchServerError}");
         }

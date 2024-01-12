@@ -1,8 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Logging;
 using NPaperless.SearchLibrary;
 using PaperlessRestAPI.BusinessLogic;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
+using PaperlessRestAPI.logging;
 using PaperlessRestAPI.OCRWorker;
 using PaperlessRestAPI.RabbitMQ;
 using System.Net.Sockets;
@@ -64,8 +66,8 @@ namespace PaperlessRestAPI.OCRWorker
                    ),
                 queueOptions.queueName,
                    new OcrClient(new OcrOptions()),
-                   new ElasticSearchIndex(null,null)
-
+                   new ElasticSearchIndex(null, LoggerFactory.GetLogger()),
+                   LoggerFactory.GetLogger()
                );
 
             while (true)

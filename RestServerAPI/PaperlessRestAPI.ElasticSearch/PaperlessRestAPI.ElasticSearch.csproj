@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TourPlanner_4_SWENII.Utils\PaperlessRestAPI.Utils.csproj" />
+  </ItemGroup>
+
 </Project>

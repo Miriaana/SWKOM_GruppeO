@@ -1,6 +1,7 @@
 ﻿using Minio.DataModel;
 using NPaperless.SearchLibrary;
 using PaperlessRestAPI.BusinessLogic.Interfaces;
+using PaperlessRestAPI.logging;
 using PaperlessRestAPI.RabbitMQ;
 using RabbitMQ.Client;
 using System;
@@ -20,14 +21,16 @@ namespace PaperlessRestAPI.OCRWorker
         private IOcrClient _ocrWorker;
         private readonly string _queue;
         private ISearchIndex _search;
+        private ILoggerWrapper _logger;
 
-        public OCRProgram(IFileStorage fileStorage, RabbitMQHandler rabbitmq, string queue, IOcrClient ocrWorker , ISearchIndex search) 
+        public OCRProgram(IFileStorage fileStorage, RabbitMQHandler rabbitmq, string queue, IOcrClient ocrWorker , ISearchIndex search, ILoggerWrapper logger) 
         { 
             _fileStorage = fileStorage;
             _rabbitmq = rabbitmq;
             _queue = queue;
             _ocrWorker = ocrWorker;
             _search = search;
+            _logger = logger;
         }
 
         public async void testocr()
@@ -37,12 +40,14 @@ namespace PaperlessRestAPI.OCRWorker
 
                 if (path != string.Empty)
                 {
+                    _logger.Info("OCR recieved path from queue");
                     var Filestream = await _fileStorage.GetFileAsync(path);
-
+                    _logger.Info("OCR got file from file storage");
                     var ocrContentText = _ocrWorker.OcrPdf(Filestream);
                     Console.WriteLine(ocrContentText);
-                    
-                    Document doc = new Document
+                    _logger.Info("OCR created text from pdf");
+
+                Document doc = new Document
                     {
                         Id = Guid.NewGuid().ToString(),
                         Title = path,
@@ -51,7 +56,8 @@ namespace PaperlessRestAPI.OCRWorker
 
 
                 _search.AddDocumentAsync(doc);
-                }
+                _logger.Info("OCR added text for search");
+            }
         }
     }
 }
